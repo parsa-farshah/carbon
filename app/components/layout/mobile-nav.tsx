@@ -12,17 +12,17 @@ interface Service {
   href: string;
 }
 
-interface NavLink {
-  title: string;
-  href: string;
-}
+// interface NavLink {
+//   title: string;
+//   href: string;
+// }
 
 interface MobileNavProps {
   services: Service[];
-  navLinks: NavLink[];
+  // navLinks?: NavLink[];
 }
 
-export function MobileNav({ services, navLinks }: MobileNavProps) {
+export function MobileNav({ services }: MobileNavProps) {
   const [open, setOpen] = useState(false);
   const [showServices, setShowServices] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);

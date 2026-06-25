@@ -58,7 +58,7 @@ export function Header() {
         <div className="grid grid-cols-3 lg:grid-cols-[auto_1fr_auto] items-center h-16 sm:h-20 gap-4">
           {/* Mobile Menu */}
           <div className="flex items-center justify-start lg:hidden">
-            <MobileNav services={services} navLinks={navLinks} />
+            <MobileNav services={services} />
           </div>
 
           {/* Logo */}
