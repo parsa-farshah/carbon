@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import HeroSection from "./components/home/hero-section";
 import { WhyCarbonSection } from "./components/home/why-carbon-section";
+import RepositorySection from "./components/home/RepositoryCard";
 
 export const metadata: Metadata = {
   title: "صفحه اصلی",
@@ -14,6 +15,7 @@ export default function Home() {
     <div className="min-h-screen">
       <HeroSection />
       <WhyCarbonSection />
+      <RepositorySection />
     </div>
   );
 }

@@ -83,7 +83,7 @@ export default function HeroSection() {
 
             {/* images */}
             <div className="w-full md:w-[48%] relative min-h-[400px]">
-              {/* 1. پس‌زمینه (همان‌طور که بود) */}
+              {/* 1. پس‌زمینه */}
               <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.25]">
                 <svg
                   className="w-full h-full"
@@ -94,25 +94,20 @@ export default function HeroSection() {
                       id="dots"
                       x="0"
                       y="0"
-                      width="40"
-                      height="40"
+                      width="20"
+                      height="20"
                       patternUnits="userSpaceOnUse"
                     >
-                      <circle
-                        cx="2"
-                        cy="2"
-                        r="1.5"
-                        className="fill-foreground"
-                      />
+                      <circle cx="1" cy="1" r="1" className="fill-foreground" />
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#dots)" />
                 </svg>
               </div>
 
-              {/* 2. کانتینر جدید محتوا: از flex برای وسط‌چین کردن استفاده می‌کند */}
+              {/* 2. کانتینر محتوا */}
               <div className="absolute inset-0 flex items-center justify-center p-4">
-                {/* بج‌ها (همچنان absolute هستند و نسبت به این کانتینر قرار می‌گیرند) */}
+                {/* بج‌ها */}
                 <motion.div
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{
@@ -160,19 +155,19 @@ export default function HeroSection() {
                   </span>
                 </motion.div>
 
-                {/* 3. عکس: حالا به راحتی در وسط قرار می‌گیرد بدون نیاز به translate */}
+                {/* 3. عکس بزرگ‌تر */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="w-[90%] z-10"
+                  className="w-full max-w-[98%] z-10"
                 >
                   <Image
                     src="/images/carbonPanel.png"
                     alt="کربن پنل - نمای اصلی"
-                    width={520}
-                    height={340}
-                    className="w-full h-auto object-contain rounded-xl shadow-2xl"
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover rounded-xl shadow-2xl"
                     priority
                   />
                 </motion.div>
