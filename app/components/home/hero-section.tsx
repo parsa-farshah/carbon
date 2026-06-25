@@ -15,38 +15,6 @@ import {
 } from "lucide-react";
 
 export default function HeroSection() {
-  // انیمیشن شناور (floating)
-  const floatingAnimation = {
-    y: [0, -20, 0],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
-
-  // انیمیشن شناور برای تگ چپ (با تاخیر)
-  const floatingAnimationLeft = {
-    y: [0, -15, 0],
-    transition: {
-      duration: 3.5,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay: 0.5,
-    },
-  };
-
-  // انیمیشن شناور برای تگ راست (با تاخیر متفاوت)
-  const floatingAnimationRight = {
-    y: [0, -18, 0],
-    transition: {
-      duration: 3.2,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay: 1,
-    },
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
       {/* Background Gradient */}
@@ -97,7 +65,15 @@ export default function HeroSection() {
           <div className="relative w-full max-w-5xl mt-12">
             {/* تگ راست بالا - به‌روزرسانی‌های زنده */}
             <motion.div
-              animate={floatingAnimationRight}
+              animate={{
+                y: [0, -15, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: [0.4, 0, 0.6, 1],
+                delay: 0.5,
+              }}
               className="absolute -top-8 -right-4 md:right-8 lg:right-16 z-20"
             >
               <div className="flex items-center gap-2 bg-green-500/90 dark:bg-green-600/90 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
@@ -110,7 +86,15 @@ export default function HeroSection() {
 
             {/* تگ پایین چپ - آپتایم */}
             <motion.div
-              animate={floatingAnimationLeft}
+              animate={{
+                y: [0, -15, 0],
+              }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: [0.4, 0, 0.6, 1],
+                delay: 0.5,
+              }}
               className="absolute -bottom-8 -left-4 md:left-8 lg:left-16 z-20"
             >
               <div className="flex items-center gap-2 bg-purple-500/90 dark:bg-purple-600/90 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
@@ -123,14 +107,21 @@ export default function HeroSection() {
 
             {/* تصویر اصلی */}
             <motion.div
-              animate={floatingAnimation}
+              animate={{
+                y: [0, -20, 0],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: [0.4, 0, 0.6, 1],
+              }}
               className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-purple-200/20 dark:border-purple-800/20 hover:scale-105 duration-300"
             >
               <Image
                 src="/images/carbonPanel.png"
                 alt="Carbon Panel Dashboard"
                 fill
-                className="object-fit transition-transform "
+                className="object-fit transition-transform"
                 priority
               />
             </motion.div>
