@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import HeroSection from "./components/home/hero-section";
 
 export const metadata: Metadata = {
   title: "صفحه اصلی",
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <HeroSection />
+
       {/* Hero Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
