@@ -52,7 +52,7 @@ export function WhyCarbonSection() {
         </div>
 
         {/* موبایل: carousel */}
-        <div className="lg:hidden w-full ">
+        <div className="lg:hidden w-full">
           <WhyCarbonCarousel features={features} />
         </div>
 

@@ -21,14 +21,13 @@ interface Props {
 export function WhyCarbonCarousel({ features }: Props) {
   return (
     <Carousel
-      className="w-full"
+      className="w-full "
       opts={{
         direction: "rtl",
         align: "center",
-        loop: true,
       }}
     >
-      <CarouselContent className="-ml-2 md:-ml-4 w-full">
+      <CarouselContent className="-ml-2 md:-ml-4 w-full px-4 sm:px-6 lg:px-8">
         {features.map((feature, index) => (
           <CarouselItem
             key={index}
