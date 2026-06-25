@@ -83,7 +83,7 @@ export default function HeroSection() {
 
             {/* images */}
             <div className="w-full md:w-[48%] relative min-h-[400px]">
-              {/* background pattern */}
+              {/* 1. پس‌زمینه (همان‌طور که بود) */}
               <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.25]">
                 <svg
                   className="w-full h-full"
@@ -110,8 +110,9 @@ export default function HeroSection() {
                 </svg>
               </div>
 
-              <div>
-                {/* Badge: دیتای یکپارچه */}
+              {/* 2. کانتینر جدید محتوا: از flex برای وسط‌چین کردن استفاده می‌کند */}
+              <div className="absolute inset-0 flex items-center justify-center p-4">
+                {/* بج‌ها (همچنان absolute هستند و نسبت به این کانتینر قرار می‌گیرند) */}
                 <motion.div
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{
@@ -119,7 +120,7 @@ export default function HeroSection() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="absolute top-[12%] left-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
+                  className="absolute top-[10%] left-[5%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
                 >
                   <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
                   <span className="text-xs font-medium text-foreground whitespace-nowrap">
@@ -127,7 +128,6 @@ export default function HeroSection() {
                   </span>
                 </motion.div>
 
-                {/* Badge: آپتایم 99% */}
                 <motion.div
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{
@@ -136,7 +136,7 @@ export default function HeroSection() {
                     ease: "easeInOut",
                     delay: 1,
                   }}
-                  className="absolute top-[12%] right-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
+                  className="absolute top-[10%] right-[5%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
                 >
                   <span className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
                   <span className="text-xs font-medium text-foreground whitespace-nowrap">
@@ -144,7 +144,6 @@ export default function HeroSection() {
                   </span>
                 </motion.div>
 
-                {/* Badge: امنیت 100% */}
                 <motion.div
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{
@@ -153,7 +152,7 @@ export default function HeroSection() {
                     ease: "easeInOut",
                     delay: 2,
                   }}
-                  className="absolute bottom-[12%] left-[50%] -translate-x-1/2 z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
+                  className="absolute bottom-[10%] left-[50%] -translate-x-1/2 z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
                 >
                   <span className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
                   <span className="text-xs font-medium text-foreground whitespace-nowrap">
@@ -161,11 +160,12 @@ export default function HeroSection() {
                   </span>
                 </motion.div>
 
+                {/* 3. عکس: حالا به راحتی در وسط قرار می‌گیرد بدون نیاز به translate */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[90%] z-10"
+                  className="w-[90%] z-10"
                 >
                   <Image
                     src="/images/carbonPanel.png"
