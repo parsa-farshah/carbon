@@ -38,19 +38,23 @@ export function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 sm:h-20 items-center justify-between gap-4">
-          {/* Logo - Right Side (RTL) */}
           <Link
             href="/"
             className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity"
           >
-            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-base sm:text-lg">
-                م
-              </span>
-            </div>
-            <span className="font-bold text-base sm:text-lg lg:text-xl">
-              پروژه مهندس
-            </span>
+            {/* تصویر برای حالت Light */}
+            <img
+              src="/images/logoBlack.svg"
+              alt="Logo"
+              className="h-8 w-8 sm:h-10 sm:w-10 dark:hidden"
+            />
+
+            {/* تصویر برای حالت Dark */}
+            <img
+              src="/images/logoWhite.svg"
+              alt="Logo"
+              className="h-8 w-8 sm:h-10 sm:w-10 hidden dark:block"
+            />
           </Link>
 
           {/* Desktop Navigation */}
