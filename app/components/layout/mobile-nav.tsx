@@ -9,11 +9,10 @@ import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Separator } from "@/components/ui/separator";
+import { ThemeToggle } from "./../theme-toggle"; // ایمپورت کامپوننت تم
 
 const navLinks = [
   { href: "/", label: "خانه", description: "صفحه اصلی" },
@@ -36,15 +35,27 @@ export function MobileNav() {
         </Button>
       </SheetTrigger>
 
-      <SheetContent side="right" className="w-[280px] sm:w-[320px] p-0">
-        <SheetHeader className="p-6 pb-4 border-b">
+      <SheetContent
+        side="right"
+        className="w-[280px] sm:w-[320px] p-0 flex flex-col [&>button]:hidden"
+      >
+        {/* هدر */}
+        <div className="flex items-center justify-between p-6 border-b">
           <SheetTitle className="text-right text-lg font-bold">
             منوی اصلی
           </SheetTitle>
-        </SheetHeader>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setOpen(false)}
+            className="h-8 w-8 rounded-full"
+          >
+            <X className="h-5 w-5" />
+          </Button>
+        </div>
 
         {/* Navigation Links */}
-        <nav className="flex flex-col p-4 gap-1">
+        <nav className="flex-1 overflow-y-auto p-4 flex flex-col gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -66,28 +77,37 @@ export function MobileNav() {
           ))}
         </nav>
 
-        <Separator className="my-2" />
+        {/* Footer: Theme Toggle + Auth Buttons */}
+        <div className="p-4 border-t space-y-4">
+          {/* ردیف تغییر تم */}
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-medium text-foreground">
+              تغییر وضعیت تم
+            </span>
+            <ThemeToggle />
+          </div>
 
-        {/* Auth Buttons */}
-        <div className="p-4 space-y-3">
-          <Button
-            variant="outline"
-            className="w-full justify-center text-sm h-11"
-            asChild
-          >
-            <Link href="/login" onClick={() => setOpen(false)}>
-              ورود به حساب
-            </Link>
-          </Button>
-          <Button
-            variant="default"
-            className="w-full justify-center text-sm h-11"
-            asChild
-          >
-            <Link href="/register" onClick={() => setOpen(false)}>
-              ثبت نام
-            </Link>
-          </Button>
+          {/* دکمه‌های ورود و ثبت‌نام */}
+          <div className="space-y-3">
+            <Button
+              variant="outline"
+              className="w-full justify-center text-sm h-11"
+              asChild
+            >
+              <Link href="/login" onClick={() => setOpen(false)}>
+                ورود به حساب
+              </Link>
+            </Button>
+            <Button
+              variant="default"
+              className="w-full justify-center text-sm h-11"
+              asChild
+            >
+              <Link href="/register" onClick={() => setOpen(false)}>
+                ثبت نام
+              </Link>
+            </Button>
+          </div>
         </div>
       </SheetContent>
     </Sheet>

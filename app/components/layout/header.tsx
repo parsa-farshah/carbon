@@ -41,20 +41,31 @@ export function Header() {
           <Link
             href="/"
             className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity"
+            aria-label="رفتن به صفحه اصلی"
           >
-            {/* تصویر برای حالت Light */}
+            {/* تصویر لوگو برای حالت Light */}
             <img
               src="/images/logoBlack.svg"
-              alt="Logo"
+              alt="لوگوی کربن - پنل مدیریت"
               className="h-8 w-8 sm:h-10 sm:w-10 dark:hidden"
             />
 
-            {/* تصویر برای حالت Dark */}
+            {/* تصویر لوگو برای حالت Dark */}
             <img
               src="/images/logoWhite.svg"
-              alt="Logo"
+              alt="لوگوی کربن - پنل مدیریت"
               className="h-8 w-8 sm:h-10 sm:w-10 hidden dark:block"
             />
+
+            {/* متن کنار لوگو */}
+            <div className="flex flex-col">
+              <h2 className="text-base sm:text-lg lg:text-xl font-bold text-foreground">
+                کربن
+              </h2>
+              <h3 className="text-[10px] sm:text-xs text-muted-foreground  sm:block">
+                پنل مدیریت و توسعه هوشمند کسب و کار
+              </h3>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -85,12 +96,12 @@ export function Header() {
             <ThemeToggle />
 
             {/* Auth Buttons - Hidden on Mobile */}
-            <div className="hidden sm:flex items-center gap-2">
+            <div className="hidden lg:flex items-center gap-2">
               <Button variant="ghost" size="sm" asChild className="text-sm">
                 <Link href="/login">ورود</Link>
               </Button>
               <Button variant="default" size="sm" asChild className="text-sm">
-                <Link href="/register">ثبت نام</Link>
+                <Link href="/register">همین حالا شروع کنید</Link>
               </Button>
             </div>
 
