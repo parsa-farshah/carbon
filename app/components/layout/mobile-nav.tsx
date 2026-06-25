@@ -160,9 +160,6 @@ export function MobileNav({ services, navLinks }: MobileNavProps) {
                     <span className="text-base font-medium text-foreground">
                       {service.title}
                     </span>
-                    <span className="text-sm text-muted-foreground">
-                      {service.description}
-                    </span>
                   </Link>
                 ))}
               </div>

@@ -2,23 +2,33 @@
 export interface NavLink {
   title: string;
   href: string;
+  description?: string;
 }
 
 export const navLinks: NavLink[] = [
   {
     title: "خانه",
     href: "/",
+    description: "صفحه اصلی",
   },
   {
-    title: "مرکز آموزش",
-    href: "/learning",
+    title: "درباره ما",
+    href: "/about",
+    description: "آشنایی با ما",
   },
   {
-    title: "ماژول ها",
-    href: "/modules",
+    title: "خدمات",
+    href: "/services",
+    description: "خدمات ما",
   },
   {
-    title: "پلن ها",
-    href: "/plans",
+    title: "بلاگ",
+    href: "/blog",
+    description: "مقالات و اخبار",
+  },
+  {
+    title: "تماس",
+    href: "/contact",
+    description: "ارتباط با ما",
   },
 ];
