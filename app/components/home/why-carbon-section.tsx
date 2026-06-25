@@ -1,4 +1,3 @@
-// src/components/home/why-carbon-section.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -10,28 +9,28 @@ const features = [
     title: "یکپارچگی واقعی",
     subtitle: "Native Integration",
     description:
-      "تمام بخش‌های سیستم از روز اول برای همکاری با یکدیگر طراحی شده‌اند. جریان اطلاعات بین دپارتمان‌ها بدون هیچ واسطه یا نیاز به ابزار جانبی اتفاق می‌افتد.",
+      "در کربن، ما ماژول‌های جداگانه را به زور به هم وصله نکرده‌ایم. تمام بخش‌های سیستم از روز اول برای همکاری با یکدیگر طراحی شده‌اند. این یعنی جریان اطلاعات بین دپارتمان‌های شما بدون هیچ واسطه یا نیاز به ابزار جانبی (Third-party) اتفاق می‌افتد. یکپارچگی در کربن یک ادعا نیست، بلکه در DNA سیستم است.",
   },
   {
     icon: Eye,
     title: "شفافیت مدیریتی",
     subtitle: "Managerial Transparency",
     description:
-      "خداحافظی با گزارش‌های متناقض اکسل. تمام داده‌های سازمان در یک بستر متمرکز جمع‌آوری می‌شوند و مدیران به دید ۳۶۰ درجه دست پیدا می‌کنند.",
+      "خداحافظی با گزارش‌های متناقض اکسل و حدس و گمان. وقتی تمام داده‌های سازمان در یک بستر متمرکز جمع‌آوری می‌شوند، مدیران به یک دید ۳۶۰ درجه دست پیدا می‌کنند. تصمیم‌گیری‌های شما از این پس بر اساس داده‌های واقعی و در لحظه (Real-time) خواهد بود.",
   },
   {
     icon: TrendingUp,
     title: "مقیاس‌پذیری برای رشد",
     subtitle: "Scalability for Growth",
     description:
-      "کربن همراه با کسب‌وکار شما قد می‌کشد. از اولین مراحل مدیریت مشتریان تا اتوماسیون‌های پیچیده و تحلیل‌های پیشرفته داده، زیرساخت واحد کربن ظرفیت پاسخگویی به توسعه شما را دارد.",
+      "کربن نرم‌افزاری نیست که سال آینده با بزرگ‌تر شدن سازمانتان مجبور به تعویض آن شوید. سیستم ما همراه با کسب‌وکار شما قد می‌کشد. از اولین مراحل مدیریت مشتریان تا اتوماسیون‌های پیچیده و تحلیل‌های پیشرفته داده، زیرساخت واحد کربن ظرفیت پاسخگویی به توسعه شما را دارد.",
   },
   {
     icon: DollarSign,
     title: "هزینه قابل پیش‌بینی",
     subtitle: "Predictable Cost",
     description:
-      "یک اشتراک، یک اکوسیستم کامل. دیگر خبری از خرید لایسنس‌های متعدد، هزینه‌های ادغام، یا پرداخت‌های پنهان نیست.",
+      "بحران هزینه‌های پنهانِ نرم‌افزارهای جزیره‌ای را به یاد دارید؟ در کربن فرمول ساده است: یک اشتراک، یک اکوسیستم کامل. دیگر خبری از خرید لایسنس‌های متعدد، هزینه‌های ادغام، یا پرداخت‌های پنهان برای ماژول‌های اضافی نیست. شما دقیقاً می‌دانید برای چه چیزی سرمایه‌گذاری می‌کنید.",
   },
 ];
 
@@ -51,8 +50,8 @@ export function WhyCarbonSection() {
           </p>
         </div>
 
-        {/* Features - flex row در md به بعد */}
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 max-w-7xl mx-auto">
+        {/* Features - flex row در lg به بعد */}
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-5 max-w-7xl mx-auto">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -60,37 +59,32 @@ export function WhyCarbonSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{
-                duration: 0.6,
+                duration: 0.5,
                 delay: index * 0.1,
                 ease: "easeOut",
               }}
               className="flex-1 group"
             >
-              <div className="h-full p-5 lg:p-6 bg-card border rounded-2xl hover:shadow-lg transition-all duration-300 hover:border-foreground/30 hover:-translate-y-1">
-                {/* Icon */}
-                <div className="mb-4">
-                  <div className="inline-flex h-10 w-10 lg:h-12 lg:w-12 items-center justify-center rounded-xl bg-foreground text-background group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="h-5 w-5 lg:h-6 lg:w-6" />
+              <div className="h-full p-4 lg:p-5 bg-card border rounded-2xl hover:shadow-md transition-all duration-300 hover:border-foreground/20 hover:-translate-y-1 flex flex-col gap-3">
+                {/* Icon + Titles */}
+                <div className="flex items-start gap-3">
+                  <div className="shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-foreground text-background group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="h-4 w-4" />
                   </div>
-                </div>
-
-                {/* Content */}
-                <div className="space-y-2 lg:space-y-3">
-                  {/* Title */}
                   <div>
-                    <h3 className="text-base lg:text-lg font-bold mb-1">
+                    <h3 className="text-sm font-bold leading-snug">
                       {index + 1}. {feature.title}
                     </h3>
-                    <p className="text-xs lg:text-sm text-muted-foreground font-medium">
+                    <p className="text-xs text-muted-foreground font-medium mt-0.5">
                       {feature.subtitle}
                     </p>
                   </div>
-
-                  {/* Description */}
-                  <p className="text-xs lg:text-sm text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
                 </div>
+
+                {/* Description */}
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             </motion.div>
           ))}
