@@ -110,53 +110,55 @@ export default function HeroSection() {
                 </svg>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="absolute top-[5%] right-[5%] w-[58%] z-10"
-              >
-                <Image
-                  src="/images/carbonPanel.png"
-                  alt="کربن پنل - نمای اصلی"
-                  width={520}
-                  height={340}
-                  className="w-full h-auto object-cover rounded-xl shadow-2xl"
-                  priority
-                />
-              </motion.div>
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="absolute top-[5%] right-[5%] lg:right-[-14%] w-[58%] z-10"
+                >
+                  <Image
+                    src="/images/carbonPanel.png"
+                    alt="کربن پنل - نمای اصلی"
+                    width={520}
+                    height={340}
+                    className="w-full h-auto object-cover rounded-xl shadow-2xl"
+                    priority
+                  />
+                </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="absolute bottom-[40%] sm:bottom-[30%] md:bottom-[50%] lg:bottom-[40%] xl:bottom-[25%] left-[2%] w-[44%] z-20"
-              >
-                <Image
-                  src="/images/carbonPanel.png"
-                  alt="کربن پنل - داشبورد"
-                  width={520}
-                  height={340}
-                  className="w-full h-auto object-cover rounded-xl shadow-2xl"
-                  priority
-                />
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="absolute bottom-[40%] sm:bottom-[30%] md:bottom-[50%] lg:bottom-[40%] xl:bottom-[25%] left-[2%] lg:left-[10%] w-[44%] z-20"
+                >
+                  <Image
+                    src="/images/carbonPanel.png"
+                    alt="کربن پنل - داشبورد"
+                    width={520}
+                    height={340}
+                    className="w-full h-auto object-cover rounded-xl shadow-2xl"
+                    priority
+                  />
+                </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="absolute top-[2%] left-[8%] w-[30%] z-30"
-              >
-                <Image
-                  src="/images/carbonPanel.png"
-                  alt="کربن پنل - گزارشات"
-                  width={520}
-                  height={340}
-                  className="w-full h-auto object-cover rounded-xl shadow-2xl"
-                  priority
-                />
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="absolute top-[2%] left-[8%] lg:left-[20%] w-[30%] z-30"
+                >
+                  <Image
+                    src="/images/carbonPanel.png"
+                    alt="کربن پنل - گزارشات"
+                    width={520}
+                    height={340}
+                    className="w-full h-auto object-cover rounded-xl shadow-2xl"
+                    priority
+                  />
+                </motion.div>
+              </div>
             </div>
           </div>
 
@@ -180,7 +182,14 @@ export default function HeroSection() {
             {/* App Store */}
             <Link href="#" className="group">
               <div className="flex flex-col items-center gap-2 p-4 rounded-xl border bg-card hover:bg-accent transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                <Apple className="w-8 h-8 group-hover:scale-110 transition-transform" />
+                <Image
+                  src="/icons/appleStore.png"
+                  alt="apple store"
+                  width={8}
+                  height={8}
+                  className="w-8 h-8 object-cover rounded-xl shadow-2xl"
+                  priority
+                />
                 <span className="text-sm font-medium text-center">
                   App Store
                 </span>
