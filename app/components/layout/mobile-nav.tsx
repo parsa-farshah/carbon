@@ -183,19 +183,19 @@ export function MobileNav({ services }: MobileNavProps) {
 
         {/* Footer */}
         <div className="border-t border-border p-4 space-y-3">
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">تم</span>
-            <ThemeToggle />
-          </div>
-          <div className="flex gap-2">
+          <div className="flex flex-col gap-2">
             <Link href="/login" className="flex-1">
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full  py-5">
                 ورود به حساب
               </Button>
             </Link>
             <Link href="/signup" className="flex-1">
-              <Button className="w-full">ثبت نام</Button>
+              <Button className="w-full py-5">ثبت نام</Button>
             </Link>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-muted-foreground">تم</span>
+            <ThemeToggle />
           </div>
         </div>
       </SheetContent>
