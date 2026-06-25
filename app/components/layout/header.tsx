@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "./../theme-toggle";
 import { MobileNav } from "./mobile-nav";
 
 export function Header() {
@@ -37,45 +36,44 @@ export function Header() {
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 sm:h-20 items-center justify-between gap-4">
+        {/* ساختار Grid واکنش‌گرا: ۳ ستون در موبایل، ستون‌های اتوماتیک در دسکتاپ */}
+        <div className="grid grid-cols-3 lg:grid-cols-[auto_1fr_auto] items-center h-16 sm:h-20 gap-4">
+          {/* سمت راست (موبایل): منو - سمت چپ (دسکتاپ): لوگو */}
+          <div className="flex items-center justify-start lg:hidden">
+            <MobileNav />
+          </div>
+
           <Link
             href="/"
-            className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity"
+            className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 hover:opacity-80 transition-opacity col-span-1"
             aria-label="رفتن به صفحه اصلی"
           >
-            {/* تصویر لوگو برای حالت Light */}
             <img
               src="/images/logoBlack.svg"
-              alt="لوگوی کربن - پنل مدیریت"
+              alt="لوگوی کربن"
               className="h-8 w-8 sm:h-10 sm:w-10 dark:hidden"
             />
-
-            {/* تصویر لوگو برای حالت Dark */}
             <img
               src="/images/logoWhite.svg"
-              alt="لوگوی کربن - پنل مدیریت"
+              alt="لوگوی کربن"
               className="h-8 w-8 sm:h-10 sm:w-10 hidden dark:block"
             />
-
-            {/* متن کنار لوگو */}
-            <div className="flex flex-col">
-              <h2 className="text-base sm:text-lg lg:text-xl font-bold text-foreground">
-                کربن
-              </h2>
-              <h3 className="text-[10px] sm:text-xs text-muted-foreground  sm:block">
-                پنل مدیریت و توسعه هوشمند کسب و کار
+            <div className="hidden lg:flex flex-col">
+              <h2 className="text-xl font-bold text-foreground">کربن</h2>
+              <h3 className="text-xs text-muted-foreground">
+                پنل مدیریت هوشمند
               </h3>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          {/* Desktop Navigation (فقط در دسکتاپ نمایش داده می‌شود) */}
+          <nav className="hidden lg:flex items-center justify-center gap-1 xl:gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "relative px-3 xl:px-4 py-2 text-sm xl:text-base font-medium transition-colors rounded-md",
+                  "relative px-4 py-2 text-sm font-medium transition-colors rounded-md",
                   "hover:text-primary hover:bg-accent/50",
                   pathname === link.href
                     ? "text-primary"
@@ -83,28 +81,26 @@ export function Header() {
                 )}
               >
                 {link.label}
-                {pathname === link.href && (
-                  <span className="absolute bottom-0 right-0 w-full h-0.5 bg-primary rounded-full" />
-                )}
               </Link>
             ))}
           </nav>
 
-          {/* Actions */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            {/* Auth Buttons - Hidden on Mobile */}
+          {/* سمت چپ (موبایل): دکمه شروع - سمت راست (دسکتاپ): دکمه‌های ورود و شروع */}
+          <div className="flex items-center justify-end gap-2">
+            <Button
+              variant="default"
+              size="sm"
+              asChild
+              className="text-xs sm:text-sm"
+            >
+              <Link href="/register">شروع کنید</Link>
+            </Button>
+
+            {/* دکمه ورود در موبایل مخفی است */}
             <div className="hidden lg:flex items-center gap-2">
               <Button variant="ghost" size="sm" asChild className="text-sm">
                 <Link href="/login">ورود</Link>
               </Button>
-              <Button variant="default" size="sm" asChild className="text-sm">
-                <Link href="/register">همین حالا شروع کنید</Link>
-              </Button>
-            </div>
-
-            {/* Mobile Menu - Only on Mobile/Tablet */}
-            <div className="lg:hidden">
-              <MobileNav />
             </div>
           </div>
         </div>
