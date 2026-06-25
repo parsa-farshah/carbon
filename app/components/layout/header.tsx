@@ -6,10 +6,37 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
+import { LogIn, ChevronDown } from "lucide-react";
+
+const services = [
+  {
+    title: "طراحی پورتال های هوشمند مدیریتی",
+    href: "/services/smart-portals",
+  },
+  {
+    title: "طراحی نرم افزارهای تحت وب",
+    href: "/services/web-apps",
+  },
+  {
+    title: "طراحی رابط کاربری",
+    href: "/services/ui-design",
+  },
+  {
+    title: "طراحی نرم افزار موبایل تحت وب",
+    href: "/services/mobile-web",
+  },
+];
+
+const navLinks = [
+  { href: "/learning-center", label: "مرکز آموزش" },
+  { href: "/modules", label: "ماژول ها" },
+  { href: "/pricing", label: "پلن ها" },
+];
 
 export function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,14 +45,6 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navLinks = [
-    { href: "/", label: "خانه" },
-    { href: "/about", label: "درباره ما" },
-    { href: "/services", label: "خدمات" },
-    { href: "/blog", label: "بلاگ" },
-    { href: "/contact", label: "تماس" },
-  ];
 
   return (
     <header
@@ -36,13 +55,13 @@ export function Header() {
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* ساختار Grid واکنش‌گرا: ۳ ستون در موبایل، ستون‌های اتوماتیک در دسکتاپ */}
         <div className="grid grid-cols-3 lg:grid-cols-[auto_1fr_auto] items-center h-16 sm:h-20 gap-4">
-          {/* سمت راست (موبایل): منو - سمت چپ (دسکتاپ): لوگو */}
+          {/* Mobile Menu */}
           <div className="flex items-center justify-start lg:hidden">
-            <MobileNav />
+            <MobileNav services={services} navLinks={navLinks} />
           </div>
 
+          {/* Logo */}
           <Link
             href="/"
             className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 hover:opacity-80 transition-opacity col-span-1"
@@ -66,27 +85,74 @@ export function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation (فقط در دسکتاپ نمایش داده می‌شود) */}
-          <nav className="hidden lg:flex items-center justify-center gap-1 xl:gap-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "relative px-4 py-2 text-sm font-medium transition-colors rounded-md",
-                  "hover:text-primary hover:bg-accent/50",
-                  pathname === link.href
-                    ? "text-primary"
-                    : "text-muted-foreground",
-                )}
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex justify-center">
+            <ul className="flex items-center gap-1">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      "inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
+                      "hover:bg-accent hover:text-accent-foreground",
+                      pathname === link.href
+                        ? "text-primary"
+                        : "text-muted-foreground",
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+
+              {/* Services Dropdown */}
+              <li
+                className="relative group"
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
               >
-                {link.label}
-              </Link>
-            ))}
+                <button
+                  className={cn(
+                    "inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
+                    "hover:bg-accent hover:text-accent-foreground",
+                    pathname.startsWith("/services")
+                      ? "text-primary"
+                      : "text-muted-foreground",
+                  )}
+                >
+                  خدمات
+                  <ChevronDown className="mr-1 h-4 w-4 group-hover:!rotate-180 duration-300" />
+                </button>
+
+                {servicesOpen && (
+                  <div className="absolute left-0 top-full  ">
+                    <div className="w-[280px] rounded-md border bg-popover p-2 shadow-lg mt-2">
+                      {services.map((service) => (
+                        <Link
+                          key={service.href}
+                          href={service.href}
+                          className="block rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground"
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </li>
+            </ul>
           </nav>
 
-          {/* سمت چپ (موبایل): دکمه شروع - سمت راست (دسکتاپ): دکمه‌های ورود و شروع */}
+          {/* Action Buttons */}
           <div className="flex items-center justify-end gap-2">
+            <div className="hidden lg:flex items-center gap-2">
+              <Button variant="ghost" size="sm" asChild className="text-sm">
+                <Link href="/login" className="flex items-center">
+                  ورود
+                  <LogIn className="mr-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
             <Button
               variant="default"
               size="sm"
@@ -95,13 +161,6 @@ export function Header() {
             >
               <Link href="/register">شروع کنید</Link>
             </Button>
-
-            {/* دکمه ورود در موبایل مخفی است */}
-            <div className="hidden lg:flex items-center gap-2">
-              <Button variant="ghost" size="sm" asChild className="text-sm">
-                <Link href="/login">ورود</Link>
-              </Button>
-            </div>
           </div>
         </div>
       </div>
