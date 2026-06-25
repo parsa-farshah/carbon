@@ -39,7 +39,7 @@ export function MobileNav({ services, navLinks }: MobileNavProps) {
       </SheetTrigger>
 
       <SheetContent
-        side="right"
+        side="left"
         className="!w-full h-screen p-0 bg-background text-foreground border-none flex flex-col [&>button]:hidden"
       >
         <div className="relative h-full overflow-hidden">
