@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Link2, Eye, TrendingUp, DollarSign } from "lucide-react";
+import { WhyCarbonCarousel } from "./WhyCarbonCarousel";
 
 const features = [
   {
@@ -37,21 +38,26 @@ const features = [
 export function WhyCarbonSection() {
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-muted/30 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="2xl:container 2xl:mx-auto">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6  px-4 sm:px-6 lg:px-8">
             احتمالاً می‌پرسید چرا کربن؟
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed  px-4 sm:px-6 lg:px-8">
             چه چیزی این پلتفرم را از ده‌ها نرم‌افزار دیگری که تا امروز امتحان
             کرده‌اید، متمایز می‌کند؟ ما پاسخ را در چهار مزیت کلیدی خلاصه
             کرده‌ایم:
           </p>
         </div>
 
-        {/* Features - flex row در lg به بعد */}
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-5 max-w-7xl mx-auto">
+        {/* موبایل: carousel */}
+        <div className="lg:hidden w-full ">
+          <WhyCarbonCarousel features={features} />
+        </div>
+
+        {/* دسکتاپ: grid */}
+        <div className="hidden lg:flex flex-row gap-5 max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -65,8 +71,7 @@ export function WhyCarbonSection() {
               }}
               className="flex-1 group"
             >
-              <div className="h-full p-4 lg:p-5 bg-card border rounded-2xl hover:shadow-md transition-all duration-300 hover:border-foreground/20 hover:-translate-y-1 flex flex-col gap-3">
-                {/* Icon + Titles */}
+              <div className="h-full p-5 bg-card border rounded-2xl hover:shadow-md transition-all duration-300 hover:border-foreground/20 hover:-translate-y-1 flex flex-col gap-3">
                 <div className="flex items-start gap-3">
                   <div className="shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-foreground text-background group-hover:scale-110 transition-transform duration-300">
                     <feature.icon className="h-4 w-4" />
@@ -80,8 +85,6 @@ export function WhyCarbonSection() {
                     </p>
                   </div>
                 </div>
-
-                {/* Description */}
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>

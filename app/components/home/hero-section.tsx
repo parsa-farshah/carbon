@@ -21,7 +21,7 @@ export default function HeroSection() {
         <div className="flex flex-col items-center text-center space-y-8">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center w-full gap-8">
             {/* text */}
-            <div className="w-full md:w-[48%] flex flex-col gap-4 items-center md:items-start">
+            <div className="w-full md:w-[48%] flex flex-col gap-8 items-center md:items-start">
               {/* دکمه شعار بالا */}
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
@@ -111,50 +111,68 @@ export default function HeroSection() {
               </div>
 
               <div>
+                {/* Badge: دیتای یکپارچه */}
+                <motion.div
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute top-[12%] left-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
+                >
+                  <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
+                  <span className="text-xs font-medium text-foreground whitespace-nowrap">
+                    دیتای یکپارچه
+                  </span>
+                </motion.div>
+
+                {/* Badge: آپتایم 99% */}
+                <motion.div
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1,
+                  }}
+                  className="absolute top-[12%] right-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
+                >
+                  <span className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
+                  <span className="text-xs font-medium text-foreground whitespace-nowrap">
+                    آپتایم ۹۹٪
+                  </span>
+                </motion.div>
+
+                {/* Badge: امنیت 100% */}
+                <motion.div
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 2,
+                  }}
+                  className="absolute bottom-[12%] left-[50%] -translate-x-1/2 z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
+                >
+                  <span className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
+                  <span className="text-xs font-medium text-foreground whitespace-nowrap">
+                    امنیت ۱۰۰٪
+                  </span>
+                </motion.div>
+
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="absolute top-[5%] right-[5%] lg:right-[-14%] w-[58%] z-10"
+                  className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[90%] z-10"
                 >
                   <Image
                     src="/images/carbonPanel.png"
                     alt="کربن پنل - نمای اصلی"
                     width={520}
                     height={340}
-                    className="w-full h-auto object-cover rounded-xl shadow-2xl"
-                    priority
-                  />
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="absolute bottom-[40%] sm:bottom-[30%] md:bottom-[50%] lg:bottom-[40%] xl:bottom-[25%] left-[2%] lg:left-[10%] w-[44%] z-20"
-                >
-                  <Image
-                    src="/images/carbonPanel.png"
-                    alt="کربن پنل - داشبورد"
-                    width={520}
-                    height={340}
-                    className="w-full h-auto object-cover rounded-xl shadow-2xl"
-                    priority
-                  />
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="absolute top-[2%] left-[8%] lg:left-[20%] w-[30%] z-30"
-                >
-                  <Image
-                    src="/images/carbonPanel.png"
-                    alt="کربن پنل - گزارشات"
-                    width={520}
-                    height={340}
-                    className="w-full h-auto object-cover rounded-xl shadow-2xl"
+                    className="w-full h-auto object-contain rounded-xl shadow-2xl"
                     priority
                   />
                 </motion.div>
