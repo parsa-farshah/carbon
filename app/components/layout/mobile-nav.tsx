@@ -12,7 +12,6 @@ import { ThemeToggle } from "../theme-toggle";
 interface Service {
   title: string;
   href: string;
-  description: string;
 }
 
 interface NavLink {
