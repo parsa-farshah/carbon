@@ -22,109 +22,145 @@ export default function HeroSection() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center text-center space-y-8">
-          {/* دکمه شعار بالا */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Link href="#top">
-              <Button
-                variant="outline"
-                className="rounded-full px-6 py-2 transition-all duration-300 hover:scale-105"
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center w-full gap-8">
+            {/* text */}
+            <div className="w-full md:w-[48%] flex flex-col gap-4 items-center md:items-start">
+              {/* دکمه شعار بالا */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
               >
-                <Zap className="w-4 h-4 ml-2" />
-                همین حالا تغییر را ایجاد کنید!
-              </Button>
-            </Link>
-          </motion.div>
+                <Link href="#top">
+                  <Button
+                    variant="outline"
+                    className="rounded-full px-6 py-2 transition-all duration-300 hover:scale-105"
+                  >
+                    <Zap className="w-4 h-4 ml-2" />
+                    همین حالا تغییر را ایجاد کنید!
+                  </Button>
+                </Link>
+              </motion.div>
 
-          {/* عنوان اصلی */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold"
-          >
-            مدیریت هوشمند کارها
-            <br />
-            با کربن پنل.
-          </motion.h1>
+              {/* عنوان اصلی */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center md:text-right"
+              >
+                مدیریت هوشمند کارها
+                <br />
+                با کربن پنل.
+              </motion.h1>
 
-          {/* توضیحات */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl"
-          >
-            یک گام بزرگ برای پیشرفت و بهبود کسب و کار شما!
-          </motion.p>
+              {/* توضیحات */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-base md:text-lg text-muted-foreground"
+              >
+                یک گام بزرگ برای پیشرفت و بهبود کسب و کار شما!
+              </motion.p>
 
-          {/* تصویر اصلی با تگ‌های شناور */}
-          <div className="relative w-full max-w-5xl mt-12">
-            {/* تگ راست بالا - به‌روزرسانی‌های زنده */}
-            <motion.div
-              animate={{
-                y: [0, -15, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: [0.4, 0, 0.6, 1],
-                delay: 0.5,
-              }}
-              className="absolute -top-8 -right-4 md:right-8 lg:right-16 z-20"
-            >
-              <div className="flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
-                <div className="w-2 h-2 bg-background rounded-full animate-pulse" />
-                <span className="text-sm font-medium whitespace-nowrap">
-                  به‌روزرسانی‌های زنده
-                </span>
+              {/* دکمه‌های اصلی */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="flex gap-4 mt-2"
+              >
+                <Button size="lg" className="rounded-full px-8">
+                  شروع رایگان
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full px-8"
+                >
+                  مشاهده دمو
+                </Button>
+              </motion.div>
+            </div>
+
+            {/* images */}
+            <div className="w-full md:w-[48%] relative min-h-[400px]">
+              {/* background pattern */}
+              <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.25]">
+                <svg
+                  className="w-full h-full"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs>
+                    <pattern
+                      id="dots"
+                      x="0"
+                      y="0"
+                      width="40"
+                      height="40"
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <circle
+                        cx="2"
+                        cy="2"
+                        r="1.5"
+                        className="fill-foreground"
+                      />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#dots)" />
+                </svg>
               </div>
-            </motion.div>
 
-            {/* تگ پایین چپ - آپتایم */}
-            <motion.div
-              animate={{
-                y: [0, -15, 0],
-              }}
-              transition={{
-                duration: 3.5,
-                repeat: Infinity,
-                ease: [0.4, 0, 0.6, 1],
-                delay: 0.5,
-              }}
-              className="absolute -bottom-8 -left-4 md:left-8 lg:left-16 z-20"
-            >
-              <div className="flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
-                <Activity className="w-4 h-4" />
-                <span className="text-sm font-medium whitespace-nowrap">
-                  آپتایم ۹۹٪
-                </span>
-              </div>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="absolute top-[5%] right-[5%] w-[58%] z-10"
+              >
+                <Image
+                  src="/images/carbonPanel.png"
+                  alt="کربن پنل - نمای اصلی"
+                  width={520}
+                  height={340}
+                  className="w-full h-auto object-cover rounded-xl shadow-2xl"
+                  priority
+                />
+              </motion.div>
 
-            {/* تصویر اصلی */}
-            <motion.div
-              animate={{
-                y: [0, -20, 0],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: [0.4, 0, 0.6, 1],
-              }}
-              className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border hover:scale-105 duration-300"
-            >
-              <Image
-                src="/images/carbonPanel.png"
-                alt="Carbon Panel Dashboard"
-                fill
-                className="object-fit transition-transform"
-                priority
-              />
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="absolute bottom-[8%] left-[2%] w-[44%] z-20"
+              >
+                <Image
+                  src="/images/carbonPanel.png"
+                  alt="کربن پنل - داشبورد"
+                  width={520}
+                  height={340}
+                  className="w-full h-auto object-cover rounded-xl shadow-2xl"
+                  priority
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="absolute top-[2%] left-[8%] w-[30%] z-30"
+              >
+                <Image
+                  src="/images/carbonPanel.png"
+                  alt="کربن پنل - گزارشات"
+                  width={520}
+                  height={340}
+                  className="w-full h-auto object-cover rounded-xl shadow-2xl"
+                  priority
+                />
+              </motion.div>
+            </div>
           </div>
 
           {/* دکمه‌های دانلود */}
