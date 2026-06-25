@@ -140,14 +140,6 @@ const Footer = () => {
               <div className="h-0.5 w-full bg-primary mt-1"></div>
             </div>
             <div className="space-y-4">
-              <Link
-                href="https://70marcom.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm bg-base-200 p-6 rounded-2xl border border-base-300 w-fit font-bold text-primary hover:bg-base-300 transition-colors"
-              >
-                70MARCOM
-              </Link>
               <div className="p-6 rounded-2xl border border-base-300">
                 <p className="text-xs text-base-content/70 leading-relaxed mb-3">
                   با ما شریک شوید تا دسترسی خود را گسترش دهید و کسب و کار خود را
