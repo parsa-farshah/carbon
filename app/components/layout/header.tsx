@@ -92,9 +92,6 @@ export function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Theme Toggle - Always Visible */}
-            <ThemeToggle />
-
             {/* Auth Buttons - Hidden on Mobile */}
             <div className="hidden lg:flex items-center gap-2">
               <Button variant="ghost" size="sm" asChild className="text-sm">
