@@ -84,7 +84,7 @@ export default function HeroSection() {
             {/* images */}
             <div className="w-full md:w-[48%] relative min-h-[400px]">
               {/* 1. پس‌زمینه */}
-              <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.25]">
+              <div className="absolute -left-0 top-0 opacity-[0.10] dark:opacity-[0.25]">
                 <svg
                   className="w-full h-full"
                   xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +160,7 @@ export default function HeroSection() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="w-full max-w-[98%] z-10"
+                  className="w-full max-w-[100%] z-10 absolute left-20"
                 >
                   <Image
                     src="/images/carbonPanel.png"
