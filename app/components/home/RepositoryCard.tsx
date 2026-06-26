@@ -151,7 +151,7 @@ function SectionHeader() {
           href="#"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md"
         >
-          <span>مشاهده بیشتر</span>
+          <span>بیشتر</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

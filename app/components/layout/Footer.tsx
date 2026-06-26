@@ -6,6 +6,7 @@ import { MonitorSmartphone, Apple, Play, Smartphone } from "lucide-react";
 
 // کامپوننت ThemeToggle import شده
 import { ThemeToggle } from "./../theme-toggle";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -172,11 +173,32 @@ const Footer = () => {
                 </p>
                 <Link
                   href="/become-partner"
-                  className="inline-block text-sm font-bold text-primary hover:underline "
+                  className="inline-block text-sm font-bold text-primary hover:underline"
                 >
                   شریک ما شوید →
                 </Link>
               </div>
+
+              <Link
+                href="https://shetabanhost.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-6 rounded-2xl border border-base-300 bg-secondary hover:border-primary/50 transition-colors"
+              >
+                <p className="text-xs text-muted-foreground mb-3">
+                  میزبان محبوب کربن
+                </p>
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/images/shetaban.png"
+                    alt="شتابان هاست"
+                    width={35}
+                    height={35}
+                    className="object-contain"
+                  />
+                  <span className="font-bold text-foreground">شتابان هاست</span>
+                </div>
+              </Link>
             </div>
           </div>
 
