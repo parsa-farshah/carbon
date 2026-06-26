@@ -13,6 +13,7 @@ import { PodcastSection } from "./components/home/PodcastSection";
 import { ArticlesSection } from "./components/home/ArticlesSection";
 import { TrustedBy } from "./components/home/trusted-by";
 import { Testimonials } from "./components/home/Testimonials";
+import { VipClub } from "./components/home/VipClub";
 
 export const metadata: Metadata = {
   title: "صفحه اصلی",
@@ -33,6 +34,7 @@ export default function Home() {
       <PricingSection />
       <TrustedBy />
       <Testimonials />
+      <VipClub />
       <ContactSection />
       <ScrollToTop />
       <Footer />

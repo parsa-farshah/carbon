@@ -88,9 +88,9 @@ export function Testimonials() {
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 overflow-hidden">
-      <div className="2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
             نظرات مشتریان
           </p>
@@ -102,68 +102,87 @@ export function Testimonials() {
           </p>
         </div>
 
-        {/* Carousel */}
-        <Carousel
-          dir="rtl"
-          opts={{ align: "end", loop: true }}
-          plugins={[plugin.current]}
-          className="w-full"
-        >
-          <CarouselContent className="-mr-4 ml-0">
-            {testimonials.map((t, i) => (
-              <CarouselItem
-                key={i}
-                className="pr-4 basis-full sm:basis-1/2 lg:basis-1/3"
-              >
-                <div className="h-full rounded-2xl border bg-card p-6 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow">
-                  {/* Stars */}
-                  <Stars count={t.rating} />
+        {/* Carousel — wrapper clips overflow but lets peek cards show */}
+        <div className="overflow-hidden 2xl:container 2xl:mx-auto lg:px-8">
+          <Carousel
+            dir="rtl"
+            opts={{
+              align: "center", // کارت فعال وسط قرار می‌گیره
+              loop: true,
+              direction: "rtl", // embla رو آگاه می‌کنه به RTL
+            }}
+            plugins={[plugin.current]}
+            className="w-full"
+          >
+            {/*
+              gap با px روی CarouselItem مدیریت می‌شه نه margin منفی،
+              چون margin منفی در RTL جهتش برعکس می‌شه و باگ ایجاد می‌کنه.
+            */}
+            <CarouselContent className="ml-0 mr-0">
+              {testimonials.map((t, i) => (
+                <CarouselItem
+                  key={i}
+                  className={[
+                    // موبایل: کارت مرکزی ۸۰٪، کارت‌های کناری ۸٪ از هر طرف دیده می‌شن
+                    "basis-[82%]",
+                    "sm:basis-1/2",
+                    "lg:basis-1/3",
+                    // فاصله بین کارت‌ها
+                    "px-2 sm:px-3",
+                  ].join(" ")}
+                >
+                  <div className="h-full rounded-2xl border bg-card p-6 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow">
+                    {/* Stars */}
+                    <Stars count={t.rating} />
 
-                  {/* Top: logo + company */}
-                  <div className="flex items-center gap-3">
-                    <div className="relative w-10 h-10 rounded-md overflow-hidden border bg-muted flex-shrink-0">
-                      <Image
-                        src={t.companyLogo}
-                        alt={t.company}
-                        fill
-                        className="object-contain p-1"
-                      />
+                    {/* Top: logo + company */}
+                    <div className="flex items-center gap-3">
+                      <div className="relative w-10 h-10 rounded-md overflow-hidden border bg-muted flex-shrink-0">
+                        <Image
+                          src={t.companyLogo}
+                          alt={t.company}
+                          fill
+                          className="object-contain p-1"
+                        />
+                      </div>
+                      <span className="text-sm font-medium text-muted-foreground">
+                        {t.company}
+                      </span>
                     </div>
-                    <span className="text-sm font-medium text-muted-foreground">
-                      {t.company}
-                    </span>
+
+                    {/* Quote */}
+                    <blockquote className="flex-1 text-sm sm:text-base text-foreground/80 leading-7">
+                      &ldquo;{t.quote}&rdquo;
+                    </blockquote>
+
+                    {/* Divider */}
+                    <hr className="border-border" />
+
+                    {/* Bottom: avatar + name */}
+                    <div className="flex items-center gap-3">
+                      <div className="relative w-10 h-10 rounded-full overflow-hidden border flex-shrink-0">
+                        <Image
+                          src={t.avatar}
+                          alt={t.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-foreground">
+                          {t.name}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          {t.title}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-
-                  {/* Quote */}
-                  <blockquote className="flex-1 text-sm sm:text-base text-foreground/80 leading-7">
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-
-                  {/* Divider */}
-                  <hr className="border-border" />
-
-                  {/* Bottom: avatar + name */}
-                  <div className="flex items-center gap-3">
-                    <div className="relative w-10 h-10 rounded-full overflow-hidden border flex-shrink-0">
-                      <Image
-                        src={t.avatar}
-                        alt={t.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-foreground">
-                        {t.name}
-                      </p>
-                      <p className="text-xs text-muted-foreground">{t.title}</p>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
       </div>
     </section>
   );
