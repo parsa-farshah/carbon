@@ -159,7 +159,7 @@ function SectionHeader() {
 
         <Link
           href="#"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md"
+          className=" items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md hidden md:inline-flex"
         >
           <span>بیشتر</span>
           <svg

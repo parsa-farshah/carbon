@@ -129,6 +129,74 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* بخش نمادها و مجوزها */}
+        <div className="mt-16 pt-8 border-t border-base-200">
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+            {/* دانش بنیان */}
+            <Link
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+            >
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl border border-base-300 bg-base-200/30 p-3 transition-all hover:border-primary/50 hover:shadow-lg">
+                <Image
+                  src="/images/knowledge-based.png"
+                  alt="دانش بنیان"
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-muted-foreground whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                دانش بنیان
+              </span>
+            </Link>
+
+            {/* دانشگاه علوم پزشکی شیراز */}
+            <Link
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+            >
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl border border-base-300 bg-base-200/30 p-3 transition-all hover:border-primary/50 hover:shadow-lg">
+                <Image
+                  src="/images/fasa-university.png"
+                  alt="دانشگاه علوم پزشکی شیراز"
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-muted-foreground whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                دانشگاه علوم پزشکی
+              </span>
+            </Link>
+
+            {/* eNamad */}
+            <Link
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+            >
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl border border-base-300 bg-base-200/30 p-3 transition-all hover:border-primary/50 hover:shadow-lg">
+                <Image
+                  src="/images/e-namad.jfif"
+                  alt="نماد اعتماد الکترونیکی"
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-muted-foreground whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                نماد اعتماد
+              </span>
+            </Link>
+          </div>
+        </div>
+
         {/* بخش پایین فوتر */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16 pt-12 border-t border-base-200">
           <div>
