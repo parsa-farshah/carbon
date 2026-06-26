@@ -70,12 +70,12 @@ export function Header() {
             <img
               src="/images/logoBlack.svg"
               alt="لوگوی کربن"
-              className="h-8 w-8 sm:h-10 sm:w-10 dark:hidden"
+              className="h-10 w-10 dark:hidden"
             />
             <img
               src="/images/logoWhite.svg"
               alt="لوگوی کربن"
-              className="h-8 w-8 sm:h-10 sm:w-10 hidden dark:block"
+              className="h-10 w-10 hidden dark:block"
             />
             <div className="hidden lg:flex flex-col">
               <h2 className="text-xl font-bold text-foreground">کربن</h2>

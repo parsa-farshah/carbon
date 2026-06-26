@@ -50,7 +50,6 @@ const Footer = () => {
               <h3 className="text-2xl md:text-3xl font-bold mb-2 text-foreground">
                 تحول آفرینی در کسب‌وکار
               </h3>
-              <div className="h-1 w-16 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
             </div>
             <p className="text-base-content/80 text-lg leading-relaxed mb-8 max-w-2xl">
               ما در کربن، در حال ایجاد انقلابی در نحوه مدیریت و توسعه هوشمند کسب
@@ -118,10 +117,10 @@ const Footer = () => {
                     key={item.label}
                     href={item.href}
                     aria-label={item.label}
-                    className="p-3 border border-base-300 rounded-full hover:border-primary hover:bg-primary/10 transition-all text-base-content hover:text-primary"
+                    className="p-3 border border-base-300 rounded-full hover:border-primary hover:bg-primary/10 transition-all text-base-content hover:text-primary bg-black"
                   >
                     {/* استفاده از آیکون به عنوان کامپوننت */}
-                    <item.icon className="w-5 h-5" />
+                    <item.icon className="w-5 h-5 text-white" />
                   </Link>
                 ))}
               </div>

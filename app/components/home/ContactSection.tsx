@@ -34,7 +34,7 @@ const BackgroundPattern = () => (
 
 const ContactSection = () => {
   return (
-    <section className="py-24">
+    <section className="pb-24">
       <div className="2xl:container 2xl:mx-auto px-4">
         <div className="max-w-fit mx-auto relative rounded-2xl border bg-gradient-to-br from-primary/5 via-background to-primary/10 p-8 md:p-12 overflow-hidden">
           <BackgroundPattern />

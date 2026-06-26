@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Check, Sparkles, ArrowLeft, Phone } from "lucide-react";
+import { Check, Sparkles, ArrowLeft, Phone, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -19,8 +19,8 @@ interface PricingTier {
   id: string;
   name: string;
   description: string;
-  monthlyPrice: number;
-  yearlyPrice: number;
+  monthlyPrice: string; // تغییر از string به number
+  yearlyPrice: string; // تغییر از string به number
   features: PricingFeature[];
   popular?: boolean;
   badge?: string;
@@ -37,8 +37,8 @@ const pricingTiers: PricingTier[] = [
     id: "starter",
     name: "مقدماتی",
     description: "مناسب برای کسب و کارهای کوچک که تازه شروع کرده‌اند",
-    monthlyPrice: 29,
-    yearlyPrice: 23,
+    monthlyPrice: "۲۹ تومان",
+    yearlyPrice: "۲۳ تومان",
     features: [
       { text: "تا ۳ عضو تیم", included: true },
       { text: "تحلیل و گزارش‌دهی پایه", included: true },
@@ -51,8 +51,8 @@ const pricingTiers: PricingTier[] = [
     id: "professional",
     name: "حرفه‌ای",
     description: "ایده‌آل برای شرکت‌های در حال رشد با نیازهای پیشرفته",
-    monthlyPrice: 79,
-    yearlyPrice: 63,
+    monthlyPrice: " ۷۹ تومان",
+    yearlyPrice: "۶۳ تومان",
     popular: true,
     badge: "محبوب‌ترین",
     features: [
@@ -67,8 +67,8 @@ const pricingTiers: PricingTier[] = [
     id: "enterprise",
     name: "سازمانی",
     description: "ویژگی‌های سطح سازمانی برای سازمان‌های بزرگ",
-    monthlyPrice: 149,
-    yearlyPrice: 119,
+    monthlyPrice: "تماس با تیم فروش",
+    yearlyPrice: "تماس با تیم فروش",
     features: [
       { text: "اعضای تیم نامحدود", included: true },
       { text: "تحلیل و گزارش‌دهی سفارشی", included: true },
@@ -129,7 +129,7 @@ function BillingToggle({ cycle, onChange }: BillingToggleProps) {
           cycle === "monthly" ? "text-foreground" : "text-muted-foreground",
         )}
       >
-        پرداخت ماهانه
+        پرداخت ۶ ماهانه
       </span>
 
       {/* Toggle Switch */}
@@ -214,8 +214,7 @@ function PricingCard({ tier, cycle, index }: PricingCardProps) {
 
         {/* Price */}
         <div className="flex items-baseline gap-2">
-          <span className="text-5xl font-bold text-foreground">${price}</span>
-          <span className="text-muted-foreground">/ماه</span>
+          <span className="text-3xl font-bold text-foreground">{price}</span>
         </div>
 
         {/* Features — flex-1 so this section grows and pushes CTA down */}
@@ -264,7 +263,7 @@ function PricingCard({ tier, cycle, index }: PricingCardProps) {
           )}
         >
           <span>سفارش اکنون</span>
-          <ArrowLeft className="w-4 h-4 rotate-180" />
+          <ArrowRight className="w-4 h-4 rotate-180" />
         </Link>
       </div>
     </div>
