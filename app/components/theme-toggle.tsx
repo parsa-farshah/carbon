@@ -24,7 +24,7 @@ export function ThemeToggle() {
           <span className="sr-only">تغییر تم</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-[120px]">
+      <DropdownMenuContent align="start" side="top" className="min-w-[120px]">
         <DropdownMenuItem
           onClick={() => setTheme("light")}
           className="cursor-pointer"

@@ -41,7 +41,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="relative bg-base-100 pt-20 pb-6 overflow-hidden border-t border-base-200">
+    <footer className="relative bg-base-100 pt-20 pb-2 overflow-hidden border-t border-base-200">
       <div className="2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8 py-12  relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
           {/* بخش اصلی متن */}
@@ -60,14 +60,14 @@ const Footer = () => {
               {/* دکمه "بیشتر بدانید" با ظاهر outline اما بدون حاشیه واضح */}
               <Link
                 href="/learn-more"
-                className="btn btn-sm rounded-full border-2 border-primary px-8 py-3 h-auto min-h-0 text-primary hover:bg-primary hover:text-black transition-colors"
+                className="btn btn-sm rounded-full border-2 border-primary px-8 py-3 h-auto min-h-0 text-primary hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors "
               >
                 بیشتر بدانید
               </Link>
               {/* دکمه "تماس با ما" با ظاهر outline اما بدون حاشیه واضح */}
               <Link
                 href="/contact"
-                className="btn btn-sm rounded-full border-2 border-secondary px-8 py-3 h-auto min-h-0  hover:bg-secondary hover:text-white transition-colors"
+                className="btn btn-sm rounded-full border-2 border-secondary px-8 py-3 h-auto min-h-0  hover:bg-secondary hover:opacity-90 transition-colors"
               >
                 تماس با ما
               </Link>
@@ -188,7 +188,7 @@ const Footer = () => {
                 </h4>
                 <div className="h-0.5 w-16 bg-primary mt-1"></div>
               </div>
-              <div className="bg-base-200/50 p-6 rounded-2xl border border-base-300 mb-6">
+              <div className="bg-base-200/50 p-6 rounded-2xl  mb-6">
                 <p className="text-sm text-base-content/70 mb-6">
                   با اپلیکیشن موبایل ما به داشبورد خود دسترسی داشته باشید، وظایف
                   را مدیریت کنید و عملکرد را در حین حرکت پیگیری کنید.
@@ -227,7 +227,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-12 text-center text-xs text-base-content/50">
+        <div className="mt-4 text-center text-xs text-base-content/50">
           <p>Carbon © {currentYear} تمامی حقوق برای کربن محفوظ است.</p>
         </div>
       </div>

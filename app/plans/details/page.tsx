@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Check, ChevronRight, X } from "lucide-react";
+import { ArrowRight, Check, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React, { Fragment, useState } from "react";
 import Link from "next/link";
@@ -1129,13 +1129,13 @@ export default function PricingTable() {
     <section className="py-16 bg-background" dir="rtl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* دکمه بازگشت - بالای صفحه */}
-        <div className="mb-6">
+        <div className="mb-6 flex justify-end">
           <Link
             href="/"
             className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-black hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 rounded-lg transition-colors"
           >
-            <ChevronRight />
             بازگشت
+            <ChevronLeft />
           </Link>
         </div>
 
@@ -1145,10 +1145,10 @@ export default function PricingTable() {
             تمام امکانات و قابلیت‌های کربن در یک نگاه
           </p>
 
-          <div className="inline-flex items-center gap-3 bg-card p-1.5 rounded-xl border">
+          <div className="inline-flex items-center gap-3 bg-card p-1.5 rounded-full border">
             <button
               onClick={() => setBillingCycle("monthly")}
-              className={`px-6 py-2.5 rounded-lg font-medium transition-all ${
+              className={`px-6 py-2.5 rounded-full font-medium transition-all ${
                 billingCycle === "monthly"
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
@@ -1158,14 +1158,14 @@ export default function PricingTable() {
             </button>
             <button
               onClick={() => setBillingCycle("annual")}
-              className={`px-6 py-2.5 rounded-lg font-medium transition-all ${
+              className={`px-6 py-2.5  font-medium transition-all rounded-full ${
                 billingCycle === "annual"
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
               سالانه
-              <span className="mr-2 text-xs bg-green-500/20 text-green-600 dark:text-green-400 px-2 py-0.5 rounded-full">
+              <span className="mr-2 text-xs px-4 py-1.5 rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
                 40% تخفیف
               </span>
             </button>
@@ -1217,7 +1217,7 @@ export default function PricingTable() {
                           </span>
                         </div>
                       </th>
-                      <th className="px-4 py-3 text-center text-sm font-semibold w-[150px] bg-gradient-to-br from-purple-500/10 to-pink-500/10">
+                      <th className="px-4 py-3 text-center text-sm font-semibold w-[150px] bg-gradient-to-br from-amber-500/10 to-yellow-500/10">
                         <div className="flex flex-col gap-0.5">
                           <span>VIP (Enterprise) پلن</span>
                           <span className="text-xs font-normal text-muted-foreground">
@@ -1245,7 +1245,7 @@ export default function PricingTable() {
                         <td className="px-4 py-3 text-center bg-primary/5">
                           {renderCell(row.business)}
                         </td>
-                        <td className="px-4 py-3 text-center bg-gradient-to-br from-purple-500/5 to-pink-500/5">
+                        <td className="px-4 py-3 text-center bg-gradient-to-br  bg-gradient-to-br from-amber-500/10 to-yellow-500/10">
                           {renderCell(row.enterprise)}
                         </td>
                       </tr>
