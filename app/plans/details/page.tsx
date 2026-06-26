@@ -1166,7 +1166,7 @@ export default function PricingTable() {
             >
               سالانه
               <span className="mr-2 text-xs px-4 py-1.5 rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
-                40% تخفیف
+                ۱۶٪ تخفیف
               </span>
             </button>
           </div>
