@@ -140,13 +140,23 @@ function RepositoryCard({ item, index }: RepositoryCardProps) {
 function SectionHeader() {
   return (
     <div className="text-center md:text-right mb-14 space-y-4">
-      <div className="inline-flex items-center gap-3 justify-center md:justify-start">
-        <div className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-          <Archive className="h-5 w-5 text-primary" />
+      <div className="flex justify-between items-center">
+        <div className="flex flex-col gap-y-2">
+          <div className="inline-flex items-center gap-3 justify-center md:justify-start">
+            <div className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+              <Archive className="h-5 w-5 text-primary" />
+            </div>
+            <h2 className="text-lg sm:text-3xl md:text-4xl font-bold">
+              امکانات و ابزارهای کربن پنل
+            </h2>
+          </div>
+
+          <p className="max-w-2xl mx-auto md:mx-0 text-muted-foreground text-base leading-relaxed">
+            ساده سازی و هوشمند سازی فرایندها در کسب و کار، این یعنی قدرت بیشتر
+            برای تصمیم گیری بهتر!
+          </p>
         </div>
-        <h2 className="text-lg sm:text-3xl md:text-4xl font-bold">
-          امکانات و ابزارهای کربن پنل
-        </h2>
+
         <Link
           href="#"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md"
@@ -169,11 +179,6 @@ function SectionHeader() {
           </svg>
         </Link>
       </div>
-
-      <p className="max-w-2xl mx-auto md:mx-0 text-muted-foreground text-base leading-relaxed">
-        ساده سازی و هوشمند سازی فرایندها در کسب و کار، این یعنی قدرت بیشتر برای
-        تصمیم گیری بهتر!
-      </p>
     </div>
   );
 }
