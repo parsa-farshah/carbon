@@ -73,13 +73,13 @@ export function MobileNav({ services }: MobileNavProps) {
       </SheetTrigger>
       <SheetContent
         side="right"
-        className="!w-full h-screen p-0 bg-background text-foreground border-none flex flex-col [&>button]:hidden"
+        className="!w-full h-screen p-0 bg-background text-foreground border-none flex flex-col [&>button]:hidden "
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
         {/* Container */}
-        <div className="relative flex-1 overflow-hidden">
+        <div className="relative flex-1 overflow-hidden z-60">
           {/* منوی اصلی */}
           <div
             className={`absolute inset-0 flex flex-col transition-transform duration-300 ease-out ${
