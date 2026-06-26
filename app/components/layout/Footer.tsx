@@ -135,7 +135,7 @@ const Footer = () => {
               <h4 className="font-bold text-lg text-foreground">دسترسی سریع</h4>
               <div className="h-0.5 w-16 bg-primary mt-1"></div>
             </div>
-            <ul className="space-y-6 text-sm text-base-content/70 ">
+            <ul className="space-y-6 text-sm text-muted-foreground ">
               <li>
                 <Link href="/about" className="hover:text-primary">
                   درباره ما
@@ -166,7 +166,7 @@ const Footer = () => {
             </div>
             <div className="space-y-4">
               <div className="p-6 rounded-2xl border border-base-300 bg-base-200/30 bg-secondary">
-                <p className="text-xs text-base-content/70 leading-relaxed mb-3">
+                <p className="text-xs text-muted-foreground leading-relaxed mb-3">
                   با ما شریک شوید تا دسترسی خود را گسترش دهید و کسب و کار خود را
                   با پلتفرم نوآورانه ما رشد دهید.
                 </p>
@@ -189,7 +189,7 @@ const Footer = () => {
                 <div className="h-0.5 w-16 bg-primary mt-1"></div>
               </div>
               <div className="bg-base-200/50 p-6 rounded-2xl  mb-6">
-                <p className="text-sm text-base-content/70 mb-6">
+                <p className="text-sm text-muted-foreground mb-6">
                   با اپلیکیشن موبایل ما به داشبورد خود دسترسی داشته باشید، وظایف
                   را مدیریت کنید و عملکرد را در حین حرکت پیگیری کنید.
                 </p>
