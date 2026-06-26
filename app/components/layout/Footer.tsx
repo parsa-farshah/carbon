@@ -47,10 +47,10 @@ const Footer = () => {
           {/* بخش اصلی متن */}
           <div className="lg:col-span-2">
             <div className="relative inline-block mb-6">
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2 text-foreground">
                 تحول آفرینی در کسب‌وکار
               </h3>
-              <div className="h-1 w-full bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+              <div className="h-1 w-16 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
             </div>
             <p className="text-base-content/80 text-lg leading-relaxed mb-8 max-w-2xl">
               ما در کربن، در حال ایجاد انقلابی در نحوه مدیریت و توسعه هوشمند کسب
@@ -58,15 +58,17 @@ const Footer = () => {
               شما را به سطوح بالاتری ارتقا می‌دهیم.
             </p>
             <div className="flex flex-wrap gap-4">
+              {/* دکمه "بیشتر بدانید" با ظاهر outline اما بدون حاشیه واضح */}
               <Link
                 href="/learn-more"
-                className="btn btn-outline btn-primary rounded-full border-2 px-8 py-3 h-auto min-h-0"
+                className="btn btn-sm rounded-full border-2 border-primary px-8 py-3 h-auto min-h-0 text-primary hover:bg-primary hover:text-black transition-colors"
               >
                 بیشتر بدانید
               </Link>
+              {/* دکمه "تماس با ما" با ظاهر outline اما بدون حاشیه واضح */}
               <Link
                 href="/contact"
-                className="btn btn-outline btn-secondary rounded-full border-2 px-8 py-3 h-auto min-h-0"
+                className="btn btn-sm rounded-full border-2 border-secondary px-8 py-3 h-auto min-h-0  hover:bg-secondary hover:text-white transition-colors"
               >
                 تماس با ما
               </Link>
@@ -76,7 +78,9 @@ const Footer = () => {
           {/* کارت سوشال مدیا */}
           <div className="bg-base-200/30 backdrop-blur-md p-6 rounded-2xl border border-base-300/50">
             <div className="flex flex-col items-center text-center">
-              <h2 className="text-3xl font-bold mb-2">CARBON</h2>
+              <h2 className="text-3xl font-bold mb-2 text-foreground">
+                CARBON
+              </h2>
               <div className="h-1 w-16 bg-primary rounded-full mb-6"></div>
               <p className="text-sm text-base-content/70 mb-6">
                 به جامعه در حال رشد ما از کسب و کارهایی که عملیات خود را متحول
@@ -84,15 +88,17 @@ const Footer = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-3 w-full mb-6">
+                {/* دکمه "ثبت نام" بدون حاشیه */}
                 <Link
                   href="/register"
-                  className="btn btn-outline btn-primary btn-sm w-full rounded-full border-2"
+                  className="btn btn-sm w-full rounded-full px-8 py-3 h-auto min-h-0 text-primary  border-none hover:bg-primary/10 transition-colors"
                 >
                   ثبت نام
                 </Link>
+                {/* دکمه "ورود" بدون حاشیه */}
                 <Link
                   href="/login"
-                  className="btn btn-outline btn-secondary btn-sm w-full rounded-full border-2"
+                  className="btn btn-sm w-full rounded-full px-8 py-3 h-auto min-h-0  border-none bg-white text-black hover:opacity-80 transition-colors"
                 >
                   ورود
                 </Link>
@@ -127,8 +133,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16 pt-12 border-t border-base-200">
           <div>
             <div className="mb-4 inline-block">
-              <h4 className="font-bold text-lg">ناوبری</h4>
-              <div className="h-0.5 w-full bg-primary mt-1"></div>
+              <h4 className="font-bold text-lg text-foreground">ناوبری</h4>
+              <div className="h-0.5 w-16 bg-primary mt-1"></div>
             </div>
             <ul className="space-y-6 text-sm text-base-content/70 ">
               <li>
@@ -151,18 +157,18 @@ const Footer = () => {
 
           <div>
             <div className="mb-4 inline-block">
-              <h4 className="font-bold text-lg">شرکای ما</h4>
-              <div className="h-0.5 w-full bg-primary mt-1"></div>
+              <h4 className="font-bold text-lg text-foreground">شرکای ما</h4>
+              <div className="h-0.5 w-16 bg-primary mt-1"></div>
             </div>
             <div className="space-y-4">
-              <div className="p-6 rounded-2xl border border-base-300">
+              <div className="p-6 rounded-2xl border border-base-300 bg-base-200/30">
                 <p className="text-xs text-base-content/70 leading-relaxed mb-3">
                   با ما شریک شوید تا دسترسی خود را گسترش دهید و کسب و کار خود را
                   با پلتفرم نوآورانه ما رشد دهید.
                 </p>
                 <Link
                   href="/become-partner"
-                  className="inline-block text-sm font-bold text-base-content hover:text-primary hover:underline"
+                  className="inline-block text-sm font-bold text-primary hover:underline"
                 >
                   شریک ما شوید →
                 </Link>
@@ -173,8 +179,10 @@ const Footer = () => {
           <div className="flex flex-col justify-between">
             <div>
               <div className="mb-4 inline-block">
-                <h4 className="font-bold text-lg">دانلود اپلیکیشن</h4>
-                <div className="h-0.5 w-full bg-primary mt-1"></div>
+                <h4 className="font-bold text-lg text-foreground">
+                  دانلود اپلیکیشن
+                </h4>
+                <div className="h-0.5 w-16 bg-primary mt-1"></div>
               </div>
               <div className="bg-base-200/50 p-6 rounded-2xl border border-base-300 mb-6">
                 <p className="text-sm text-base-content/70 mb-6">
@@ -185,10 +193,12 @@ const Footer = () => {
                   {/* App Store جدا */}
                   <Link
                     href="#"
-                    className="flex flex-col items-center gap-2 p-3 rounded-xl border bg-base-100 hover:border-primary transition-all text-center"
+                    className="flex flex-col items-center gap-2 p-3 rounded-xl border border-base-300 bg-base-100 hover:border-primary transition-all text-center"
                   >
                     <AppStoreIcon />
-                    <span className="text-[10px] font-medium">App Store</span>
+                    <span className="text-[10px] font-medium text-base-content">
+                      App Store
+                    </span>
                   </Link>
 
                   {/* بقیه لینک‌ها */}
@@ -196,10 +206,10 @@ const Footer = () => {
                     <Link
                       key={item.label}
                       href={item.href}
-                      className="flex flex-col items-center gap-2 p-3 rounded-xl border bg-base-100 hover:border-primary transition-all text-center"
+                      className="flex flex-col items-center gap-2 p-3 rounded-xl border border-base-300 bg-base-100 hover:border-primary transition-all text-center"
                     >
-                      <item.icon className="w-5 h-5" />
-                      <span className="text-[10px] font-medium">
+                      <item.icon className="w-5 h-5 text-base-content" />
+                      <span className="text-[10px] font-medium text-base-content">
                         {item.label}
                       </span>
                     </Link>

@@ -343,7 +343,7 @@ const PricingSection = () => {
         <BillingToggle cycle={billingCycle} onChange={setBillingCycle} />
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch max-w-7xl mx-auto">
+        <div className="grid gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch max-w-7xl mx-auto">
           {pricingTiers.map((tier, index) => (
             <PricingCard
               key={tier.id}
