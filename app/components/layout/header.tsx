@@ -46,6 +46,9 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ✅ شرط اضافه شدن خانه
+  const shouldShowHome = pathname !== "/";
+
   return (
     <header
       className={cn(
@@ -88,6 +91,23 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex justify-center">
             <ul className="flex items-center gap-1">
+              {/* ✅ خانه — فقط وقتی که غیر از صفحه اصلی هستیم */}
+              {shouldShowHome && (
+                <li>
+                  <Link
+                    href="/"
+                    className={cn(
+                      "inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
+                      "hover:bg-accent hover:text-accent-foreground",
+                      "text-muted-foreground",
+                    )}
+                  >
+                    خانه
+                  </Link>
+                </li>
+              )}
+
+              {/* لینک‌های ثابت */}
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -125,7 +145,7 @@ export function Header() {
                 </button>
 
                 {servicesOpen && (
-                  <div className="absolute left-0 top-full  ">
+                  <div className="absolute rigth-0 top-full">
                     <div className="w-[280px] rounded-md border bg-popover p-2 shadow-lg mt-2">
                       {services.map((service) => (
                         <Link

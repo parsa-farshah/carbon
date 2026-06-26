@@ -2,11 +2,11 @@ import { ShieldCheck, Lock, Palette, Languages } from "lucide-react";
 
 export function CarbonFeatures() {
   return (
-    <section className="py-20 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
       <div className=" mx-auto">
         {/* هدر */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold  dark:text-zinc-100 mb-4">
             مزیت‌های کربن
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">

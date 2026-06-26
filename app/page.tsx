@@ -8,6 +8,11 @@ import { ScrollToTop } from "./components/layout/ScrollToTop";
 import { Header } from "./components/layout/header";
 import Footer from "./components/layout/Footer";
 import { CarbonFeatures } from "./components/home/CarbonFeatures";
+import { MembershipBenefits } from "./components/home/MembershipBenefits";
+import { PodcastSection } from "./components/home/PodcastSection";
+import { ArticlesSection } from "./components/home/ArticlesSection";
+import { TrustedBy } from "./components/home/trusted-by";
+import { Testimonials } from "./components/home/Testimonials";
 
 export const metadata: Metadata = {
   title: "صفحه اصلی",
@@ -21,8 +26,13 @@ export default function Home() {
       <HeroSection />
       <WhyCarbonSection />
       <CarbonFeatures />
+      <MembershipBenefits />
+      <PodcastSection />
+      <ArticlesSection />
       <RepositorySection />
       <PricingSection />
+      <TrustedBy />
+      <Testimonials />
       <ContactSection />
       <ScrollToTop />
       <Footer />

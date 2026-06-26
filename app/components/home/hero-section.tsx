@@ -87,7 +87,7 @@ export default function HeroSection() {
             {/* images */}
             <div className="w-full md:w-[48%] relative min-h-[400px]">
               {/* 1. پس‌زمینه */}
-              <div className="absolute -left-0 top-0 opacity-[0.10] dark:opacity-[0.25]">
+              <div className="absolute h-[440px] -left-0 top-0 opacity-[0.15] dark:opacity-[0.10]">
                 <svg
                   className="w-full h-full"
                   xmlns="http://www.w3.org/2000/svg"
