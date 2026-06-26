@@ -42,7 +42,7 @@ export function AboutStorySection() {
           {/* Left: Image */}
           <div className="relative h-[420px] lg:h-[500px] rounded-2xl overflow-hidden">
             <Image
-              src="/images/aboutTeam.jpg"
+              src="/images/about.webp"
               alt="داستان کربن"
               fill
               className="object-contain"
