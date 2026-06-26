@@ -27,7 +27,7 @@ export default function Home() {
       <HeroSection />
       <WhyCarbonSection />
       {/* <CarbonFeatures /> */}
-      <MembershipBenefits />
+      {/* <MembershipBenefits /> */}
       <PodcastSection />
       <ArticlesSection />
       <RepositorySection />
