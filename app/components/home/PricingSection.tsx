@@ -195,7 +195,7 @@ function PricingCard({ tier, cycle, index }: PricingCardProps) {
       {/* Popular Badge — fix #3: white text on solid primary bg for better contrast */}
       {tier.badge && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 text-xs font-bold shadow-lg whitespace-nowrap">
+          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full  bg-gradient-to-br from-amber-500 to-yellow-500 border-amber-300 text-xs font-bold shadow-lg whitespace-nowrap">
             <Sparkles className="w-3.5 h-3.5" />
             {tier.badge}
           </div>
@@ -258,7 +258,7 @@ function PricingCard({ tier, cycle, index }: PricingCardProps) {
           className={cn(
             "mt-auto w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300",
             tier.popular
-              ? "bg-primary text-primary-foreground shadow-lg hover:shadow-xl hover:scale-[1.02] "
+              ? "bg-green-100 text-green-800 hover:bg-green-200 hover:text-white dark:bg-green-900 dark:text-white dark:hover:bg-green-800 shadow-lg hover:shadow-xl hover:scale-[1.02] "
               : "bg-card border border-border hover:border-primary hover:text-primary",
           )}
         >
