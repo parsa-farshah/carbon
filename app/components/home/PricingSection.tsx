@@ -87,7 +87,7 @@ const pricingTiers: PricingTier[] = [
 
 function SectionHeader() {
   return (
-    <div className="text-center mb-12 space-y-6">
+    <div className="text-center mb-12 space-y-6 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
       {/* Badge */}
       <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
         <Sparkles className="w-4 h-4 text-primary" />
@@ -121,7 +121,7 @@ interface BillingToggleProps {
 
 function BillingToggle({ cycle, onChange }: BillingToggleProps) {
   return (
-    <div className="flex items-center justify-center gap-4 mb-16">
+    <div className="flex items-center justify-center gap-4 mb-16 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
       {/* Monthly label */}
       <span
         className={cn(
@@ -337,13 +337,13 @@ const PricingSection = () => {
   return (
     <section className="relative py-24 overflow-hidden">
       <BackgroundDecorations />
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader />
 
         <BillingToggle cycle={billingCycle} onChange={setBillingCycle} />
 
         {/* Pricing Grid */}
-        <div className="grid gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch max-w-7xl mx-auto">
+        <div className="grid gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch w-full mx-auto">
           {pricingTiers.map((tier, index) => (
             <PricingCard
               key={tier.id}

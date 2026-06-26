@@ -139,7 +139,7 @@ function RepositoryCard({ item, index }: RepositoryCardProps) {
 
 function SectionHeader() {
   return (
-    <div className="text-center mb-14 space-y-4">
+    <div className="text-center mb-14 space-y-4 ">
       <div className="inline-flex items-center gap-3 justify-center">
         <div className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
           <Archive className="h-5 w-5 text-primary" />
@@ -218,10 +218,10 @@ function BackgroundDecorations() {
 
 const RepositorySection = () => {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-24 overflow-hidden 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
       <BackgroundDecorations />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className=" relative z-10">
         <SectionHeader />
 
         {/* Grid */}

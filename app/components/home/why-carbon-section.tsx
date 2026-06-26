@@ -38,7 +38,7 @@ const features = [
 export function WhyCarbonSection() {
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-muted/30 overflow-hidden">
-      <div className="2xl:container 2xl:mx-auto">
+      <div className="">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6  px-4 sm:px-6 lg:px-8">
@@ -57,7 +57,7 @@ export function WhyCarbonSection() {
         </div>
 
         {/* دسکتاپ: grid */}
-        <div className="hidden lg:flex flex-row gap-5 max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8">
+        <div className="hidden lg:flex flex-row gap-5 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}

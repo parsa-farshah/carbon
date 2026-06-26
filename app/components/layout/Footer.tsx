@@ -42,7 +42,7 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-base-100 pt-20 pb-6 overflow-hidden border-t border-base-200">
-      <div className="container mx-auto py-12 px-4 relative z-10">
+      <div className="2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8 py-12  relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
           {/* بخش اصلی متن */}
           <div className="lg:col-span-2">

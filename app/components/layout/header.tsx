@@ -54,7 +54,7 @@ export function Header() {
         isScrolled && "shadow-md border-b",
       )}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-3 lg:grid-cols-[auto_1fr_auto] items-center h-16 sm:h-20 gap-4">
           {/* Mobile Menu */}
           <div className="flex items-center justify-start lg:hidden">
