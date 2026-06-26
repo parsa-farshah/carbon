@@ -144,7 +144,7 @@ function SectionHeader() {
         <div className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
           <Archive className="h-5 w-5 text-primary" />
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold">
+        <h2 className="text-lg sm:text-3xl md:text-4xl font-bold">
           امکانات و ابزارهای کربن پنل
         </h2>
       </div>
