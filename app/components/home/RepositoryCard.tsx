@@ -139,16 +139,38 @@ function RepositoryCard({ item, index }: RepositoryCardProps) {
 
 function SectionHeader() {
   return (
-    <div className="text-center mb-14 space-y-4 ">
-      <div className="inline-flex items-center gap-3 justify-center">
+    <div className="text-center md:text-right mb-14 space-y-4">
+      <div className="inline-flex items-center gap-3 justify-center md:justify-start">
         <div className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
           <Archive className="h-5 w-5 text-primary" />
         </div>
         <h2 className="text-lg sm:text-3xl md:text-4xl font-bold">
           امکانات و ابزارهای کربن پنل
         </h2>
+        <Link
+          href="#"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md"
+        >
+          <span>مشاهده بیشتر</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="w-4 h-4 rotate-180"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M13 5l7 7-7 7M5 5l7 7-7 7"
+            />
+          </svg>
+        </Link>
       </div>
-      <p className="max-w-2xl mx-auto text-muted-foreground text-base leading-relaxed">
+
+      <p className="max-w-2xl mx-auto md:mx-0 text-muted-foreground text-base leading-relaxed">
         ساده سازی و هوشمند سازی فرایندها در کسب و کار، این یعنی قدرت بیشتر برای
         تصمیم گیری بهتر!
       </p>
@@ -218,7 +240,7 @@ function BackgroundDecorations() {
 
 const RepositorySection = () => {
   return (
-    <section className="relative py-24 overflow-hidden 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative pt-24 overflow-hidden 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
       <BackgroundDecorations />
 
       <div className=" relative z-10">
@@ -229,31 +251,6 @@ const RepositorySection = () => {
           {repositories.map((item, index) => (
             <RepositoryCard key={item.id} item={item} index={index} />
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-10 flex justify-center">
-          <Link
-            href="#"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md"
-          >
-            <span>مشاهده بیشتر</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-4 h-4 rotate-180"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 5l7 7-7 7M5 5l7 7-7 7"
-              />
-            </svg>
-          </Link>
         </div>
       </div>
     </section>

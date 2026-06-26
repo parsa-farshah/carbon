@@ -187,7 +187,7 @@ function PricingCard({ tier, cycle, index }: PricingCardProps) {
         "relative flex flex-col h-full rounded-2xl border transition-all duration-300",
         "animate-fadeSlideUp",
         tier.popular
-          ? "border-primary shadow-xl shadow-primary/10 scale-105"
+          ? "border-primary shadow-xl shadow-primary/10 scale-105 bg-gradient-to-br from-amber-500/10 to-yellow-500/10 border-amber-300/50"
           : "border-border bg-card hover:border-primary/50 hover:shadow-lg",
       )}
       style={{ animationDelay: `${(index + 1) * 100}ms` }}
@@ -258,7 +258,7 @@ function PricingCard({ tier, cycle, index }: PricingCardProps) {
           className={cn(
             "mt-auto w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300",
             tier.popular
-              ? "bg-primary text-primary-foreground shadow-lg hover:shadow-xl hover:scale-[1.02]"
+              ? "bg-primary text-primary-foreground shadow-lg hover:shadow-xl hover:scale-[1.02] "
               : "bg-card border border-border hover:border-primary hover:text-primary",
           )}
         >
