@@ -160,7 +160,7 @@ export default function HeroSection() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="w-full max-w-[100%] z-10 absolute left-20"
+                  className="w-full max-w-[100%] z-10 absolute left-0 lg:left-20"
                 >
                   <Image
                     src="/images/carbonPanel.png"
