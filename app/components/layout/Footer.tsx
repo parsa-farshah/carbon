@@ -132,13 +132,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16 pt-12 border-t border-base-200">
           <div>
             <div className="mb-4 inline-block">
-              <h4 className="font-bold text-lg text-foreground">ناوبری</h4>
+              <h4 className="font-bold text-lg text-foreground">دسترسی سریع</h4>
               <div className="h-0.5 w-16 bg-primary mt-1"></div>
             </div>
             <ul className="space-y-6 text-sm text-base-content/70 ">
               <li>
                 <Link href="/about" className="hover:text-primary">
                   درباره ما
+                </Link>
+              </li>{" "}
+              <li>
+                <Link href="/about" className="hover:text-primary">
+                  استخدام
                 </Link>
               </li>
               <li>

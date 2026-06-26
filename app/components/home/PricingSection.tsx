@@ -353,6 +353,16 @@ const PricingSection = () => {
           ))}
         </div>
 
+        <button className="group mx-auto flex">
+          <Link
+            className=" flex items-center rounded-full bg-primary px-6 py-3 text-base font-medium text-primary-foreground shadow-md transition-all duration-300 hover:scale-[1.02] hover:shadow-lg mt-16 cursor-pointer"
+            href="/plans/details"
+          >
+            جزییات بیشتر
+            <ArrowLeft className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />
+          </Link>
+        </button>
+
         {/* ✅ CTA box داخل container — px خودکار هم‌تراز میشه */}
         <div className="mt-16 rounded-2xl border bg-gradient-to-br from-primary/5 via-background to-primary/10 p-8 md:p-12 backdrop-blur-sm">
           <div className="flex flex-col items-start text-right space-y-4">
@@ -369,7 +379,7 @@ const PricingSection = () => {
             </Button>
           </div>
         </div>
-      </div>{" "}
+      </div>
       {/* ← بسته شدن container */}
     </section>
   );

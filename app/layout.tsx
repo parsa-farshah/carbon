@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider";
-import { Header } from "./components/layout/header";
-import Footer from "./components/layout/Footer";
 
 const vazirmatn = Vazirmatn({
   subsets: ["arabic"],
@@ -45,10 +43,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-
           <main className="min-h-screen">{children}</main>
-          <Footer />
         </ThemeProvider>
       </body>
     </html>
