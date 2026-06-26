@@ -165,14 +165,14 @@ const Footer = () => {
               <div className="h-0.5 w-16 bg-primary mt-1"></div>
             </div>
             <div className="space-y-4">
-              <div className="p-6 rounded-2xl border border-base-300 bg-base-200/30">
+              <div className="p-6 rounded-2xl border border-base-300 bg-base-200/30 bg-secondary">
                 <p className="text-xs text-base-content/70 leading-relaxed mb-3">
                   با ما شریک شوید تا دسترسی خود را گسترش دهید و کسب و کار خود را
                   با پلتفرم نوآورانه ما رشد دهید.
                 </p>
                 <Link
                   href="/become-partner"
-                  className="inline-block text-sm font-bold text-primary hover:underline"
+                  className="inline-block text-sm font-bold text-primary hover:underline "
                 >
                   شریک ما شوید →
                 </Link>
