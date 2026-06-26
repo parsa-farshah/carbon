@@ -7,6 +7,7 @@ import ContactSection from "./components/home/ContactSection";
 import { ScrollToTop } from "./components/layout/ScrollToTop";
 import { Header } from "./components/layout/header";
 import Footer from "./components/layout/Footer";
+import { CarbonFeatures } from "./components/home/CarbonFeatures";
 
 export const metadata: Metadata = {
   title: "صفحه اصلی",
@@ -19,6 +20,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <WhyCarbonSection />
+      <CarbonFeatures />
       <RepositorySection />
       <PricingSection />
       <ContactSection />
