@@ -154,10 +154,10 @@ export function Header() {
               </Button>
             </div>
             <Button
-              variant="default"
+              variant="ghost"
               size="sm"
               asChild
-              className="text-xs sm:text-sm"
+              className="text-xs sm:text-sm bg-green-100 text-green-800 hover:bg-green-200 hover:text-green-900 dark:bg-green-900 dark:text-green-300 dark:hover:bg-green-800"
             >
               <Link href="/register">شروع کنید</Link>
             </Button>

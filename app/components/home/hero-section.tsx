@@ -68,8 +68,11 @@ export default function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="flex gap-4 mt-2"
               >
-                <Button size="lg" className="rounded-full px-8">
-                  شروع رایگان
+                <Button
+                  size="lg"
+                  className="rounded-full px-8 bg-green-100 text-green-800 hover:bg-green-200 hover:text-green-900 dark:bg-green-900 dark:text-green-300 dark:hover:bg-green-800"
+                >
+                  شروع
                 </Button>
                 <Button
                   size="lg"
