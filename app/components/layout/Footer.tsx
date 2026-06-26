@@ -130,7 +130,7 @@ const Footer = () => {
               <h4 className="font-bold text-lg">ناوبری</h4>
               <div className="h-0.5 w-full bg-primary mt-1"></div>
             </div>
-            <ul className="space-y-6 text-sm text-base-content/70">
+            <ul className="space-y-6 text-sm text-base-content/70 ">
               <li>
                 <Link href="/about" className="hover:text-primary">
                   درباره ما
