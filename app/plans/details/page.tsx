@@ -1120,7 +1120,7 @@ function renderCell(value: FeatureValue) {
     );
   }
   if (value === false) {
-    return <X className="w-5 h-5 text-muted-foreground/40 mx-auto" />;
+    return <X className="w-5 h-5 text-red-500 mx-auto" />;
   }
   return <span className="text-sm text-foreground">{value}</span>;
 }
