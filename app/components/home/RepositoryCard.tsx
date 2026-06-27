@@ -1,107 +1,8 @@
 import Link from "next/link";
 import { Archive } from "lucide-react";
-import {
-  FaUsers,
-  FaGift,
-  FaBullhorn,
-  FaCalculator,
-  FaShoppingCart,
-  FaRobot,
-  FaClipboardList,
-  FaBoxes,
-  FaNetworkWired,
-  FaHeadset,
-  FaChartLine,
-} from "react-icons/fa";
-import type { IconType } from "react-icons";
-
-// ---------------------------------------------------------------------------
-// Types
-// ---------------------------------------------------------------------------
-
-interface Repository {
-  id: number;
-  name: string;
-  icon: IconType;
-  color: string;
-}
-
-// ---------------------------------------------------------------------------
-// Data
-// ---------------------------------------------------------------------------
-
-const repositories: Repository[] = [
-  {
-    id: 1,
-    name: "مدیریت منابع انسانی",
-    icon: FaUsers,
-    color: "bg-pink-100 dark:bg-pink-900/30",
-  },
-  {
-    id: 2,
-    name: "باشگاه مشتریان",
-    icon: FaGift,
-    color: "bg-green-100 dark:bg-green-900/30",
-  },
-  {
-    id: 3,
-    name: "سیستم مدیریت محتوا و اتوماسیون رسانه‌های اجتماعی",
-    icon: FaBullhorn,
-    color: "bg-sky-100 dark:bg-sky-900/30",
-  },
-  {
-    id: 4,
-    name: "حسابداری و امور مالی",
-    icon: FaCalculator,
-    color: "bg-blue-200 dark:bg-blue-900/40",
-  },
-  {
-    id: 5,
-    name: "فروشگاه آنلاین",
-    icon: FaShoppingCart,
-    color: "bg-purple-100 dark:bg-purple-900/30",
-  },
-  {
-    id: 6,
-    name: "ربات‌های فروش و تبلیغات در رسانه‌های اجتماعی",
-    icon: FaRobot,
-    color: "bg-red-100 dark:bg-red-900/30",
-  },
-  {
-    id: 7,
-    name: "سیستم مدیریت سفارشات",
-    icon: FaClipboardList,
-    color: "bg-violet-100 dark:bg-violet-900/30",
-  },
-  {
-    id: 8,
-    name: "سیستم مدیریت موجودی",
-    icon: FaBoxes,
-    color: "bg-red-200 dark:bg-red-900/50",
-  },
-  {
-    id: 9,
-    name: "سیستم فروش هوشمند و شبکه‌ای",
-    icon: FaNetworkWired,
-    color: "bg-emerald-100 dark:bg-emerald-900/30",
-  },
-  {
-    id: 10,
-    name: "سیستم پشتیبانی و تیکتینگ",
-    icon: FaHeadset,
-    color: "bg-orange-100 dark:bg-orange-900/20",
-  },
-  {
-    id: 11,
-    name: "سیستم تحلیل و آنالیز داده‌ها",
-    icon: FaChartLine,
-    color: "bg-lime-200 dark:bg-lime-900/40",
-  },
-];
-
-// ---------------------------------------------------------------------------
-// Sub-components
-// ---------------------------------------------------------------------------
+import { repositories, row1, row2 } from "./data";
+import type { Repository } from "./data";
+import MobileCarousel from "./MobileCarousel";
 
 interface RepositoryCardProps {
   item: Repository;
@@ -110,21 +11,17 @@ interface RepositoryCardProps {
 
 function RepositoryCard({ item, index }: RepositoryCardProps) {
   const IconComponent = item.icon;
-
   return (
     <div
       className="group animate-fadeSlideUp"
       style={{ animationDelay: `${(index + 1) * 50}ms` }}
     >
       <div className="relative h-full bg-card border border-border rounded-2xl p-5 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5">
-        {/* Icon */}
         <div
           className={`shrink-0 w-16 h-16 rounded-xl ${item.color} flex items-center justify-center transition-all duration-300 group-hover:scale-105`}
         >
           <IconComponent className="w-8 h-8 text-foreground transition-transform duration-300 group-hover:scale-110" />
         </div>
-
-        {/* Name */}
         <p className="text-xs font-medium text-center text-foreground/80 group-hover:text-primary transition-colors duration-300 leading-snug">
           {item.name}
         </p>
@@ -133,13 +30,9 @@ function RepositoryCard({ item, index }: RepositoryCardProps) {
   );
 }
 
-// ---------------------------------------------------------------------------
-// Section header
-// ---------------------------------------------------------------------------
-
 function SectionHeader() {
   return (
-    <div className="text-center md:text-right mb-14 space-y-4">
+    <div className="text-center md:text-right mb-14 space-y-4  px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between items-center">
         <div className="flex flex-col gap-y-2">
           <div className="inline-flex items-center gap-3 justify-center md:justify-start">
@@ -150,7 +43,6 @@ function SectionHeader() {
               امکانات و ابزارهای کربن پنل
             </h2>
           </div>
-
           <p className="max-w-2xl mx-auto md:mx-0 text-muted-foreground text-base leading-relaxed">
             ساده سازی و هوشمند سازی فرایندها در کسب و کار، این یعنی قدرت بیشتر
             برای تصمیم گیری بهتر!
@@ -159,7 +51,7 @@ function SectionHeader() {
 
         <Link
           href="#"
-          className=" items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md hidden md:inline-flex"
+          className="items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md hidden md:inline-flex"
         >
           <span>بیشتر</span>
           <svg
@@ -182,10 +74,6 @@ function SectionHeader() {
     </div>
   );
 }
-
-// ---------------------------------------------------------------------------
-// Background decorations
-// ---------------------------------------------------------------------------
 
 function BackgroundDecorations() {
   return (
@@ -212,7 +100,6 @@ function BackgroundDecorations() {
         </defs>
         <rect width="404" height="404" fill="url(#repo-pattern-1)" />
       </svg>
-
       <svg
         width="404"
         height="404"
@@ -239,23 +126,47 @@ function BackgroundDecorations() {
   );
 }
 
-// ---------------------------------------------------------------------------
-// Main component
-// ---------------------------------------------------------------------------
-
 const RepositorySection = () => {
   return (
-    <section className="relative pt-24 overflow-hidden 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative pt-24 overflow-hidden 2xl:container 2xl:mx-auto">
       <BackgroundDecorations />
 
-      <div className=" relative z-10">
+      <div className="relative z-10">
         <SectionHeader />
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4">
+        {/* Desktop grid - بدون تغییر */}
+        <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4  px-4 sm:px-6 lg:px-8">
           {repositories.map((item, index) => (
             <RepositoryCard key={item.id} item={item} index={index} />
           ))}
+        </div>
+
+        {/* Mobile carousel */}
+        <div className="md:hidden">
+          <MobileCarousel />
+          <div className="flex justify-center mt-6">
+            <Link
+              href="#"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md"
+            >
+              <span>بیشتر</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="w-4 h-4 rotate-180"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 5l7 7-7 7M5 5l7 7-7 7"
+                />
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

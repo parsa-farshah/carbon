@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import HeroSection from "./components/home/hero-section";
 import { WhyCarbonSection } from "./components/home/why-carbon-section";
-import RepositorySection from "./components/home/RepositoryCard";
 import PricingSection from "./components/home/PricingSection";
 import ContactSection from "./components/home/ContactSection";
 import { ScrollToTop } from "./components/layout/ScrollToTop";
@@ -14,6 +13,7 @@ import { ArticlesSection } from "./components/home/ArticlesSection";
 import { TrustedBy } from "./components/home/trusted-by";
 import { Testimonials } from "./components/home/Testimonials";
 import { VipClub } from "./components/home/VipClub";
+import RepositorySection from "./components/home/RepositoryCard";
 
 export const metadata: Metadata = {
   title: "صفحه اصلی",
