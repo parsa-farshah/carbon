@@ -7,14 +7,13 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import Link from "next/link";
 import { row1, row2 } from "./data";
 import type { Repository } from "./data";
 
 function RepositoryCardCarousel({ item }: { item: Repository }) {
   const Icon = item.icon;
   return (
-    <div className="min-w-[150px] max-w-[150px] h-[120px] flex-shrink-0 bg-card border border-border rounded-2xl p-3 flex flex-col items-center justify-center gap-2">
+    <div className="w-[150px] h-[120px] flex-shrink-0 bg-card border border-border rounded-2xl p-3 flex flex-col items-center justify-center gap-2">
       <div
         className={`w-10 h-10 rounded-xl ${item.color} flex items-center justify-center`}
       >
@@ -40,24 +39,28 @@ function CarouselRow({
     AutoScroll({
       speed: 1,
       direction,
-      stopOnInteraction: true,
-      stopOnMouseEnter: true,
     }),
   );
 
-  const duplicated = [...items, ...items, ...items, ...items, ...items];
+  const duplicated = [...items, ...items, ...items];
 
   return (
     <Carousel
-      opts={{ align, loop: true, dragFree: true, direction: "ltr" }}
+      opts={{
+        align,
+        loop: true,
+        dragFree: true,
+        direction: "rtl",
+        containScroll: "keepSnaps",
+      }}
       plugins={[plugin.current]}
-      className="w-full overflow-hidden"
+      className="w-full"
     >
-      <CarouselContent className="ml-0 gap-3">
+      <CarouselContent className="!mx-0 w-full px-0 sm:px-0 lg:px-0 ">
         {duplicated.map((item, index) => (
           <CarouselItem
             key={`${direction}-${item.id}-${index}`}
-            className="pl-0 basis-auto"
+            className="!pl-0 md:!pl-0 px-3 basis-auto"
           >
             <RepositoryCardCarousel item={item} />
           </CarouselItem>
@@ -70,8 +73,8 @@ function CarouselRow({
 export default function MobileCarousel() {
   return (
     <div className="md:hidden flex flex-col gap-4">
-      <CarouselRow items={row1} direction="forward" align="end" />
-      <CarouselRow items={row2} direction="backward" />
+      <CarouselRow items={row1} direction="forward" align="center" />
+      <CarouselRow items={row2} direction="backward" align="start" />
     </div>
   );
 }

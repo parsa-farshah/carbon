@@ -86,11 +86,12 @@ export default function HeroSection() {
 
             {/* images */}
             <div className="w-full md:w-[48%] relative min-h-[400px]">
-              {/* 1. پس‌زمینه */}
-              <div className="absolute h-[440px] -left-0 top-0 opacity-[0.15] dark:opacity-[0.10]">
+              {/* 1. پس‌زمینه - full-width با تکرار */}
+              <div className="absolute inset-0 w-full h-full opacity-[0.15] dark:opacity-[0.10] overflow-hidden">
                 <svg
                   className="w-full h-full"
                   xmlns="http://www.w3.org/2000/svg"
+                  style={{ width: "100vw", height: "100%" }}
                 >
                   <defs>
                     <pattern
@@ -110,7 +111,7 @@ export default function HeroSection() {
 
               {/* 2. کانتینر محتوا */}
               <div className="absolute inset-0 flex items-center justify-center p-4">
-                {/* بج‌ها */}
+                {/* بج دیتای یکپارچه - بدون تغییر */}
                 <motion.div
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{
@@ -126,6 +127,7 @@ export default function HeroSection() {
                   </span>
                 </motion.div>
 
+                {/* بج امنیت ۱۰۰٪ - جای آپتایم (راست بالا) */}
                 <motion.div
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{
@@ -136,12 +138,13 @@ export default function HeroSection() {
                   }}
                   className="absolute top-[10%] right-[5%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
                 >
-                  <span className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
                   <span className="text-xs font-medium text-foreground whitespace-nowrap">
-                    آپتایم ۹۹٪
+                    امنیت ۱۰۰٪
                   </span>
                 </motion.div>
 
+                {/* بج آپتایم ۹۹٪ - جای امنیت (پایین وسط) */}
                 <motion.div
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{
@@ -152,13 +155,13 @@ export default function HeroSection() {
                   }}
                   className="absolute bottom-[10%] left-[50%] -translate-x-1/2 z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
                 >
-                  <span className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
                   <span className="text-xs font-medium text-foreground whitespace-nowrap">
-                    امنیت ۱۰۰٪
+                    آپتایم ۹۹٪
                   </span>
                 </motion.div>
 
-                {/* 3. عکس بزرگ‌تر */}
+                {/* 3. عکس dashboard */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
