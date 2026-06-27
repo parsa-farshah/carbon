@@ -45,7 +45,7 @@ export function PricingTables({
             >
               <thead className="bg-muted/30">
                 <tr>
-                  <th className="sticky right-0 z-10 bg-background px-4 py-3 text-right text-sm font-semibold min-w-[160px] text-foreground shadow-[4px_0_10px_-5px_rgba(0,0,0,0.05)]">
+                  <th className="sticky right-0 z-20 bg-card/95 backdrop-blur-sm px-4 py-3 text-right text-sm font-semibold min-w-[140px] md:min-w-[160px] text-foreground shadow-md border-l border-border/50">
                     ماژول / قابلیت
                   </th>
                   <th className="px-4 py-3 text-right text-sm font-semibold min-w-[220px]">
@@ -87,7 +87,7 @@ export function PricingTables({
                     key={row.id}
                     className="hover:bg-muted/10 transition-colors"
                   >
-                    <td className="sticky right-0 z-10 bg-background px-4 py-3 text-sm font-medium shadow-[4px_0_10px_-5px_rgba(0,0,0,0.05)]">
+                    <td className="sticky right-0 z-20 bg-card/95 backdrop-blur-sm px-4 py-3 text-sm font-medium shadow-md border-l border-border/50">
                       {row.module}
                     </td>
                     <td className="px-4 py-3 text-sm text-muted-foreground">

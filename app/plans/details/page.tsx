@@ -2,11 +2,11 @@ import Head from "next/head";
 import Script from "next/script";
 import Link from "next/link";
 import { ScrollToTop } from "@/app/components/layout/ScrollToTop";
-import { StickyButtons } from "../Components/StickyButtons";
-import { PricingHeader } from "../Components/PricingHeader";
-import { PricingTables } from "../Components/PricingTables";
-import { PricingCards } from "../Components/PricingCards";
-import { allCategories } from "../Components/pricing-data";
+import { StickyButtons } from "../../components/plan/StickyButtons";
+import { PricingHeader } from "../../components/plan/PricingHeader";
+import { PricingTables } from "../../components/plan/PricingTables";
+import { PricingCards } from "../../components/plan/PricingCards";
+import { allCategories } from "../../components/plan/pricing-data";
 
 interface PricingPageProps {
   searchParams: Promise<{
