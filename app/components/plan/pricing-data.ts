@@ -562,5 +562,3 @@ export const allCategories = [
   ...categories4,
   ...categories5,
 ];
-
-
