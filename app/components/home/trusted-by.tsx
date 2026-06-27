@@ -8,16 +8,13 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 const trustedCompanies = [
-  { name: "دیجی‌کالا", logo: "/images/shetaban.png" },
-  { name: "اسنپ", logo: "/images/shetaban.png" },
-  { name: "تپسی", logo: "/images/shetaban.png" },
-  { name: "بامیلو", logo: "/images/shetaban.png" },
-  { name: "کافه بازار", logo: "/images/shetaban.png" },
-  { name: "دیوار", logo: "/images/shetaban.png" },
-  { name: "علی بابا", logo: "/images/shetaban.png" },
-  { name: "ایران‌سل", logo: "/images/shetaban.png" },
-  { name: "همراه اول", logo: "/images/shetaban.png" },
-  { name: "بانک ملت", logo: "/images/shetaban.png" },
+  { name: "گروه تولیدی پوشاک زنانه پاپیون", logo: "/images/papilon.svg" },
+  { name: "گروه تولیدی دکور آس", logo: "/images/ace.jpg" },
+  { name: "فروشگاه کفش دابانا", logo: "/images/dabana.svg" },
+  { name: "سیستم های خورشیدی سان استارت", logo: "/images/sunStart.svg" },
+  { name: "فروشگاه ماری امینی", logo: "/images/maryAmini.svg" },
+  { name: "ماشین سازی صنعتی بهمنی", logo: "/images/Bahmani.svg" },
+  { name: "بازرگانی فرش حقی", logo: "/images/haghi.jpg" },
 ];
 
 export function TrustedBy() {

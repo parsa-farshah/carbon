@@ -258,13 +258,13 @@ const Footer = () => {
                 </p>
                 <div className="flex items-center gap-2">
                   <Image
-                    src="/images/shetaban.png"
+                    src="/images/shetabanLogo.svg"
                     alt="شتابان هاست"
-                    width={35}
-                    height={35}
+                    width={150}
+                    height={150}
                     className="object-contain"
                   />
-                  <span className="font-bold text-foreground">شتابان هاست</span>
+                  {/* <span className="font-bold text-foreground">شتابان هاست</span> */}
                 </div>
               </Link>
             </div>
