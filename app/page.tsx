@@ -28,13 +28,16 @@ export default function Home() {
       <WhyCarbonSection />
       {/* <CarbonFeatures /> */}
       {/* <MembershipBenefits /> */}
+      <RepositorySection />
+      <VipClub />
+      <TrustedBy />
       <PodcastSection />
       <ArticlesSection />
-      <RepositorySection />
+
       <PricingSection />
-      <TrustedBy />
+
       <Testimonials />
-      <VipClub />
+
       <ContactSection />
       <ScrollToTop />
       <Footer />
