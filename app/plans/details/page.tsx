@@ -21,28 +21,6 @@ export default async function PricingPage({ searchParams }: PricingPageProps) {
 
   return (
     <>
-      {/* SEO */}
-      <Head>
-        <title>مقایسه پلن‌های کربن | قیمت و امکانات</title>
-        <meta
-          name="description"
-          content="مقایسه کامل پلن‌های پایه، بیزینس و اینترپرایز کربن"
-        />
-        <meta name="robots" content="index, follow" />
-      </Head>
-
-      <Script
-        id="pricing-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Table",
-            name: "مقایسه پلن‌های کربن",
-          }),
-        }}
-      />
-
       <section className="py-16 bg-background" dir="rtl">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* دکمه‌های sticky */}
