@@ -6,6 +6,14 @@ import { Menu, X, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/app/components/theme-toggle";
+import { FaInstagram, FaLinkedin, FaTelegram, FaTwitter } from "react-icons/fa";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Globe, ChevronDown } from "lucide-react";
 
 interface Service {
   title: string;
@@ -183,9 +191,10 @@ export function MobileNav({ services }: MobileNavProps) {
 
         {/* Footer */}
         <div className="border-t border-border p-4 space-y-3">
+          {/* دکمه‌های ورود و ثبت نام */}
           <div className="flex flex-col gap-2">
             <Link href="/login" className="flex-1">
-              <Button variant="outline" className="w-full  py-5">
+              <Button variant="outline" className="w-full py-5">
                 ورود به حساب
               </Button>
             </Link>
@@ -193,9 +202,55 @@ export function MobileNav({ services }: MobileNavProps) {
               <Button className="w-full py-5">ثبت نام</Button>
             </Link>
           </div>
+
+          {/* ردیف تنظیمات */}
           <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">تم</span>
+            {/* دکمه تغییر زبان */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="gap-1">
+                  <Globe className="h-4 w-4" />
+                  <span>FA</span>
+                  <ChevronDown className="h-3 w-3" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                <DropdownMenuItem>فارسی</DropdownMenuItem>
+                <DropdownMenuItem>English</DropdownMenuItem>
+                <DropdownMenuItem>العربية</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Theme Toggle (بدون نوشته تم) */}
             <ThemeToggle />
+          </div>
+
+          {/* شبکه‌های اجتماعی */}
+          <div className="flex justify-center gap-4 pt-2 border-t border-border">
+            <Link
+              href="#"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <FaTelegram className="w-5 h-5" />
+            </Link>
+            <Link
+              href="#"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <FaInstagram className="w-5 h-5" />
+            </Link>
+            <Link
+              href="#"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <FaLinkedin className="w-5 h-5" />
+            </Link>
+            <Link
+              href="#"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <FaTwitter className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </SheetContent>
