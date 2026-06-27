@@ -137,7 +137,7 @@ export function Testimonials() {
 
                     {/* Top: logo + company */}
                     <div className="flex items-center gap-3">
-                      <div className="relative w-10 h-10 rounded-md overflow-hidden border bg-muted flex-shrink-0">
+                      <div className="relative w-10 h-10 rounded-md overflow-hidden  flex-shrink-0">
                         <Image
                           src={t.companyLogo}
                           alt={t.company}
