@@ -32,7 +32,7 @@ function RepositoryCard({ item, index }: RepositoryCardProps) {
 
 function SectionHeader() {
   return (
-    <div className="text-center md:text-right mb-14 space-y-4  px-4 sm:px-6 lg:px-8">
+    <div className="text-center md:text-right mb-14 space-y-4 px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between items-center">
         <div className="flex flex-col gap-y-2">
           <div className="inline-flex items-center gap-3 justify-center md:justify-start">
@@ -134,39 +134,32 @@ const RepositorySection = () => {
       <div className="relative z-10">
         <SectionHeader />
 
-        {/* Desktop grid - بدون تغییر */}
-        <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4  px-4 sm:px-6 lg:px-8">
-          {repositories.map((item, index) => (
-            <RepositoryCard key={item.id} item={item} index={index} />
-          ))}
-        </div>
+        {/* کاروسل در همه سایزها */}
+        <MobileCarousel />
 
-        {/* Mobile carousel */}
-        <div className="md:hidden">
-          <MobileCarousel />
-          <div className="flex justify-center mt-6">
-            <Link
-              href="#"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md"
+        {/* دکمه بیشتر در همه سایزها */}
+        <div className="flex justify-center mt-6 md:hidden">
+          <Link
+            href="#"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md"
+          >
+            <span>بیشتر</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-4 h-4 rotate-180"
+              aria-hidden="true"
             >
-              <span>بیشتر</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-4 h-4 rotate-180"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 5l7 7-7 7M5 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
-          </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 5l7 7-7 7M5 5l7 7-7 7"
+              />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
