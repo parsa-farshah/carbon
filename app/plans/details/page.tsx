@@ -6,11 +6,13 @@ import {
   ChevronLeft,
   ChevronRight,
   Phone,
+  Sparkles,
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React, { Fragment, useState } from "react";
 import Link from "next/link";
+import { ScrollToTop } from "@/app/components/layout/ScrollToTop";
 
 // ─── Data ────────────────────────────────────────────────
 const categories: FeatureCategory[] = [
@@ -1135,22 +1137,24 @@ export default function PricingTable() {
   return (
     <section className="py-16 bg-background" dir="rtl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* دکمه بازگشت - بالای صفحه */}
-        <div className="mb-6 flex gap-2 justify-end">
-          <Link
-            href="/consultation"
-            className="inline-flex items-center gap-2 px-5 py-2 text-sm font-bold border border-black dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-lg transition-all"
-          >
-            هم‌اکنون نیاز به مشاوره دارید
-            <Phone className="w-4 h-4" />
-          </Link>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-black hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 rounded-lg transition-colors"
-          >
-            بازگشت
-            <ChevronLeft />
-          </Link>
+        {/* دکمه بازگشت - بالای صفحه با قابلیت sticky */}
+        <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm py-4 -mt-4 -mx-4 px-4 border-b border-border/50 mb-6">
+          <div className="flex gap-2 justify-end">
+            <Link
+              href="/consultation"
+              className="inline-flex items-center gap-2 px-5 py-2 text-sm font-bold border border-black dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-lg transition-all"
+            >
+              هم‌اکنون نیاز به مشاوره دارید
+              <Phone className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-black hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 rounded-lg transition-colors"
+            >
+              بازگشت
+              <ChevronLeft className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
 
         <div className="text-center mb-12">
@@ -1179,7 +1183,7 @@ export default function PricingTable() {
               }`}
             >
               سالانه
-              <span className="mr-2 text-xs px-4 py-1.5 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 border-amber-300">
+              <span className="mr-2 text-xs px-4 py-1.5 rounded-full border border-amber-300 bg-gradient-to-br from-amber-500 to-yellow-500 border-amber-300 text-white">
                 ۱۶٪ تخفیف
               </span>
             </button>
@@ -1205,7 +1209,7 @@ export default function PricingTable() {
                 <table className="w-full min-w-[1000px] divide-y divide-border">
                   <thead className="bg-muted/30">
                     <tr>
-                      <th className="sticky right-0 z-10 bg-muted/30 px-4 py-3 text-right text-sm font-semibold min-w-[160px]">
+                      <th className="sticky right-0 z-10 bg-muted px-4 py-3 text-right text-sm font-semibold min-w-[160px]">
                         ماژول / قابلیت
                       </th>
                       <th className="px-4 py-3 text-right text-sm font-semibold min-w-[220px]">
@@ -1306,13 +1310,16 @@ export default function PricingTable() {
               key={idx}
               className={`relative p-6 rounded-xl border ${
                 item.popular
-                  ? "border-primary shadow-lg shadow-primary/10"
+                  ? "border-amber-500/50 bg-gradient-to-br from-amber-500/10 to-yellow-500/10 border-amber-300/50 border-amber-300 shadow-lg shadow-amber-500/10"
                   : "border-border"
               } bg-card`}
             >
               {item.popular && (
-                <div className="absolute -top-3 right-1/2 translate-x-1/2 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
-                  محبوب‌ترین
+                <div className="absolute -top-3 right-1/2 translate-x-1/2 z-10">
+                  <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 border-amber-300 text-white text-xs font-bold shadow-lg whitespace-nowrap">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    محبوب‌ترین
+                  </div>
                 </div>
               )}
               <h3 className="text-xl font-bold mb-2">{item.plan}</h3>
@@ -1333,6 +1340,7 @@ export default function PricingTable() {
           ))}
         </div>
       </div>
+      <ScrollToTop />
     </section>
   );
 }
