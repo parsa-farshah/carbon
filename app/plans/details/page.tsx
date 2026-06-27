@@ -1207,7 +1207,7 @@ export default function PricingTable() {
               {/* جدول با اسکرول افقی مختص این بخش */}
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[1000px] divide-y divide-border">
-                  <thead className="bg-muted/30">
+                  <thead className="bg-muted">
                     <tr>
                       <th className="sticky right-0 z-10 bg-muted px-4 py-3 text-right text-sm font-semibold min-w-[160px]">
                         ماژول / قابلیت
