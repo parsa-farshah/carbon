@@ -16,7 +16,7 @@ import {
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full flex items-center justify-center overflow-hidden py-24 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full flex items-center justify-center overflow-hidden py-10 md:py-24 2xl:container 2xl:mx-auto px-4 sm:px-6 lg:px-8">
       <div className="relative z-10 w-full">
         <div className="flex flex-col items-center text-center space-y-8">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center w-full gap-8">
