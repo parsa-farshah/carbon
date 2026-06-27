@@ -1209,7 +1209,7 @@ export default function PricingTable() {
                 <table className="w-full min-w-[1000px] divide-y divide-border">
                   <thead className="bg-muted">
                     <tr>
-                      <th className="sticky right-0 z-10 bg-muted px-4 py-3 text-right text-sm font-semibold min-w-[160px]">
+                      <th className="sticky right-0 z-10 bg-[#242424] px-4 py-3 text-right text-sm font-semibold min-w-[160px]">
                         ماژول / قابلیت
                       </th>
                       <th className="px-4 py-3 text-right text-sm font-semibold min-w-[220px]">
