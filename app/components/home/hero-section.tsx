@@ -188,52 +188,35 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="w-full max-w-4xl mt-12 relative"
           >
-            {/* بج‌ها */}
-            <motion.div
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute top-[100%] left-[20%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
-            >
-              <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
-              <span className="text-xs font-medium text-foreground whitespace-nowrap">
-                به زودی
-              </span>
-            </motion.div>
-
-            {/* بج‌ها */}
-            <motion.div
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute bottom-[100%] right-[0%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
-            >
-              <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
-              <span className="text-xs font-medium text-foreground whitespace-nowrap">
-                نسخه آزمایشی
-              </span>
-            </motion.div>
-
             {/* Download Buttons */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ">
               {/* Web Application */}
-              <div className="opacity-100 cursor-pointer">
+              <div className="opacity-100 cursor-pointer relative">
                 <div className="flex flex-col items-center gap-2 p-4 rounded-xl border bg-card">
                   <MonitorSmartphone className="w-8 h-8" />
                   <span className="text-sm font-medium text-center">
                     اپلیکیشن وب
                   </span>
                 </div>
+                {/* بج‌ها */}
+                <motion.div
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute top-[2%] right-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
+                >
+                  <span className="w-2 h-2 rounded-full bg-yellow-600/50 shrink-0" />
+                  <span className="text-[8px] font-medium text-foreground whitespace-nowrap">
+                    نسخه آزمایشی
+                  </span>
+                </motion.div>
               </div>
 
               {/* App Store */}
-              <div className="opacity-50 cursor-not-allowed">
+              <div className="opacity-50 cursor-not-allowed relative">
                 <div className="flex flex-col items-center gap-2 p-4 rounded-xl border bg-card">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -252,26 +235,71 @@ export default function HeroSection() {
                     اپ استور
                   </span>
                 </div>
+                {/* بج‌ها */}
+                <motion.div
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute top-[2%] right-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
+                >
+                  <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
+                  <span className="text-[8px] font-medium text-foreground whitespace-nowrap">
+                    به زودی
+                  </span>
+                </motion.div>
               </div>
 
               {/* Google Play */}
-              <div className="opacity-50 cursor-not-allowed">
+              <div className="opacity-50 cursor-not-allowed relative">
                 <div className="flex flex-col items-center gap-2 p-4 rounded-xl border bg-card">
                   <Play className="w-8 h-8" />
                   <span className="text-sm font-medium text-center">
                     گوگل پلی
                   </span>
                 </div>
+                {/* بج‌ها */}
+                <motion.div
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute top-[2%] right-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
+                >
+                  <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
+                  <span className="text-[8px] font-medium text-foreground whitespace-nowrap">
+                    به زودی
+                  </span>
+                </motion.div>
               </div>
 
               {/* Android APK */}
-              <div className="opacity-50 cursor-not-allowed">
+              <div className="opacity-50 cursor-not-allowed relative">
                 <div className="flex flex-col items-center gap-2 p-4 rounded-xl border bg-card">
                   <Smartphone className="w-8 h-8" />
                   <span className="text-sm font-medium text-center">
                     نسخه اندروید
                   </span>
                 </div>
+                {/* بج‌ها */}
+                <motion.div
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute top-[2%] right-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
+                >
+                  <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
+                  <span className="text-[8px] font-medium text-foreground whitespace-nowrap">
+                    به زودی
+                  </span>
+                </motion.div>
               </div>
             </div>
           </motion.div>
