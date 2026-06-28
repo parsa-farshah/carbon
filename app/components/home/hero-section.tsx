@@ -236,20 +236,12 @@ export default function HeroSection() {
                   </span>
                 </div>
                 {/* بج‌ها */}
-                <motion.div
-                  animate={{ opacity: [0, 1, 0] }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute top-[2%] right-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
-                >
+                <div className="absolute top-[2%] right-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
                   <span className="text-[8px] font-medium text-foreground whitespace-nowrap">
                     به زودی
                   </span>
-                </motion.div>
+                </div>
               </div>
 
               {/* Google Play */}
@@ -261,20 +253,12 @@ export default function HeroSection() {
                   </span>
                 </div>
                 {/* بج‌ها */}
-                <motion.div
-                  animate={{ opacity: [0, 1, 0] }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute top-[2%] right-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
-                >
+                <div className="absolute top-[2%] right-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
                   <span className="text-[8px] font-medium text-foreground whitespace-nowrap">
                     به زودی
                   </span>
-                </motion.div>
+                </div>
               </div>
 
               {/* Android APK */}
@@ -286,20 +270,12 @@ export default function HeroSection() {
                   </span>
                 </div>
                 {/* بج‌ها */}
-                <motion.div
-                  animate={{ opacity: [0, 1, 0] }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute top-[2%] right-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg"
-                >
+                <div className="absolute top-[2%] right-[2%] z-20 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
                   <span className="text-[8px] font-medium text-foreground whitespace-nowrap">
                     به زودی
                   </span>
-                </motion.div>
+                </div>
               </div>
             </div>
           </motion.div>

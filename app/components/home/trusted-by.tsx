@@ -70,7 +70,7 @@ export function TrustedBy() {
                 key={`${company.name}-${index}`}
                 className="pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6"
               >
-                <div className="flex items-center justify-center h-24 sm:h-28 lg:h-32 rounded-lg border bg-card hover:bg-accent/50 transition-colors p-4 sm:p-6">
+                <div className="flex items-center justify-center h-24 sm:h-28 lg:h-32 rounded-lg  transition-colors p-4 sm:p-6">
                   <img
                     src={company.logo}
                     alt={`لوگوی ${company.name}`}

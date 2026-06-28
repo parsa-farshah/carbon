@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Archive } from "lucide-react";
+import { Archive, ArrowLeft } from "lucide-react";
 import { repositories, row1, row2 } from "./data";
 import type { Repository } from "./data";
 import MobileCarousel from "./MobileCarousel";
@@ -50,25 +50,11 @@ function SectionHeader() {
         </div>
 
         <Link
-          href="#"
-          className="items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md hidden md:inline-flex"
+          href="/"
+          className="inline-flex items-center gap-2 text-sm text-primary font-medium hover:gap-3 transition-all shrink-0"
         >
           <span>بیشتر</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-4 h-4 rotate-180"
-            aria-hidden="true"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M13 5l7 7-7 7M5 5l7 7-7 7"
-            />
-          </svg>
+          <ArrowLeft size={16} />
         </Link>
       </div>
     </div>
@@ -140,25 +126,11 @@ const RepositorySection = () => {
         {/* دکمه بیشتر در همه سایزها */}
         <div className="flex justify-center mt-6 md:hidden">
           <Link
-            href="#"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-sm font-medium hover:border-primary hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md"
+            href="/articles"
+            className="inline-flex items-center gap-2 text-sm text-primary font-medium hover:gap-3 transition-all shrink-0"
           >
             <span>بیشتر</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-4 h-4 rotate-180"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 5l7 7-7 7M5 5l7 7-7 7"
-              />
-            </svg>
+            <ArrowLeft size={16} />
           </Link>
         </div>
       </div>
