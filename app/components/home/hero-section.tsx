@@ -221,9 +221,9 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Download Buttons */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-40">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ">
               {/* Web Application */}
-              <div className="opacity-50 cursor-not-allowed">
+              <div className="opacity-100 cursor-pointer">
                 <div className="flex flex-col items-center gap-2 p-4 rounded-xl border bg-card">
                   <MonitorSmartphone className="w-8 h-8" />
                   <span className="text-sm font-medium text-center">
